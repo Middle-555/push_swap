@@ -6,15 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/12/08 14:58:22 by kpourcel         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:04:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+#include "push_swap.h"
+int	main(int argc, char **argv)
 {
-	int	i;
-	
+	t_stack_node	*a;
+	t_stack_node	*b;
 
-	i = 0;
-	if ()
+	a = NULL;
+	b = NULL;
+	
 }
