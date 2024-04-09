@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_printunsigned_decimal.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/25 11:08:08 by kpourcel          #+#    #+#             */
+/*   Updated: 2023/11/09 11:35:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+int	ft_printunsigned_decimal(unsigned int nb)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+	int		count;
 
-#endif
+	count = 0;
+	if (nb >= 0 && nb <= 9)
+	{
+		count += ft_putchar(nb + '0');
+	}
+	else
+	{
+		count += ft_printunsigned_decimal (nb / 10);
+		count += ft_printunsigned_decimal (nb % 10);
+	}
+	return (count);
+}

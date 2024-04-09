@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/04 12:55:41 by kpourcel          #+#    #+#             */
+/*   Updated: 2023/10/19 16:07:03 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+void	*ft_memset(void *s, int c, size_t len)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+	size_t	i;
 
-#endif
+	i = 0;
+	while (i < len)
+	{
+		*(unsigned char *)(s + i) = (unsigned char) c;
+		i++;
+	}
+	return (s);
+}

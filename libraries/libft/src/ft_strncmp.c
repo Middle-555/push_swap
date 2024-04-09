@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/03 15:22:11 by kpourcel          #+#    #+#             */
+/*   Updated: 2023/10/11 16:06:32 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+	size_t	i;
 
-#endif
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0')
+	{
+		if (i < (n - 1))
+			i++;
+		else
+			return (0);
+	}
+	return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
+}

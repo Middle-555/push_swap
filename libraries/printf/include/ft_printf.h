@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/24 11:35:38 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/02/01 14:23:56 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <stdio.h>
 # include <unistd.h>
-
-typedef struct s_data
-{
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+# include <limits.h>
+/*					Fonction utile 							*/
+int		ft_printf(const char *s, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *src);
+int		ft_putnbr(int nb);
+int		ft_printunsigned_decimal(unsigned int nb);
+int		ft_printhexa_low(unsigned long nb);
+int		ft_printhexa_upper(unsigned long nb);
+int		ft_printadresse(void *adresse);
 
 #endif

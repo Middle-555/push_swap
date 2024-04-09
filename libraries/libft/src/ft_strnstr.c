@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/05 14:50:30 by kpourcel          #+#    #+#             */
+/*   Updated: 2023/10/11 15:37:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+	size_t	i;
+	size_t	k;
 
-#endif
+	if (*little == '\0')
+		return ((char *)big);
+	i = 0;
+	while (big[i] != '\0' && i < len)
+	{
+		k = 0;
+		while (little[k] == big[i + k] && (i + k) < len)
+		{
+			if (little[k + 1] == '\0')
+			{
+				return ((char *)big + i);
+			}
+			k++;
+		}
+		i++;
+	}
+	return (NULL);
+}

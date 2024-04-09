@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/05 13:27:13 by kpourcel          #+#    #+#             */
+/*   Updated: 2023/10/12 16:55:38 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-#endif
+	d = dest;
+	s = src;
+	if (d == s || n == 0)
+		return (dest);
+	if ((d > s) && (d < s + n))
+	{
+		s = s + n;
+		d = d + n;
+		while (n --)
+			*(--d) = *(--s);
+	}
+	else
+	{
+		while (n--)
+		{
+			*d = *s;
+			d++;
+			s++;
+		}
+	}
+	return (dest);
+}

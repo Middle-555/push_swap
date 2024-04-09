@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/09 13:27:19 by kpourcel          #+#    #+#             */
+/*   Updated: 2023/10/11 16:07:12 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
-
-#endif
+	if (n == -2147483648)
+	{
+		ft_putstr_fd ("-2147483648", fd);
+		return ;
+	}
+	if (n >= 0 && n <= 9)
+		ft_putchar_fd(n + '0', fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd ('-', fd);
+		ft_putnbr_fd (n * (-1), fd);
+	}
+	else
+	{
+		ft_putnbr_fd (n / 10, fd);
+		ft_putnbr_fd (n % 10, fd);
+	}
+}

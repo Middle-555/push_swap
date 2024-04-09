@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:11 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/24 13:33:48 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/02/01 14:23:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_data
+int	ft_putnbr(int nb)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*target;
-	int				index;
-	int				value;
-	int				cost;
-}					t_stack;
+	int		count;
 
-#endif
+	count = 0;
+	if (nb == -2147483648)
+	{
+		count += write(1, "-2147483648", 11);
+		return (count);
+	}
+	if (nb >= 0 && nb <= 9)
+	{
+		count += ft_putchar(nb + '0');
+	}
+	else if (nb < 0)
+	{
+		count += ft_putchar ('-');
+		count += ft_putnbr2 (nb * (-1));
+	}
+	else
+	{
+		count += ft_putnbr2 (nb / 10);
+		count += ft_putnbr2 (nb % 10);
+	}
+	return (count);
+}
