@@ -6,9 +6,9 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:50:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/09 15:30:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:34:10 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
