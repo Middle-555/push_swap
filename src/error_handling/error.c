@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:34:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/10 16:05:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:07:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,3 @@ void	error_msg(char *str)
 	exit(0);
 }
 
-void	check_double(char *str)
-{
-	
-}

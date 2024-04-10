@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/10 16:10:32 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/04/10 16:13:45 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/04/10 16:13:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		error_msg("./push_swap [array of int]");
-	else if (argc > 1)
-		error_msg("./push_swap [array of int]");
-	else
-		error_msg("./push_swap [array of int]");
-}
