@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 15:20:51 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:40:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_stack
 //error_handling
 
 // -> error_utils.c
-void	check_number(char *str);
+void	check_number(char **str);
 // -> error.c
 void	error_msg(char *str);
 

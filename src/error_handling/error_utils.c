@@ -6,23 +6,32 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 15:11:41 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:49:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	check_number(char *str)
+void	check_number(char **str)
 {
-	int	i;
+	int	mot;
+	int	caractere;
 
-	i = 0;
-	while (str[i])
+	mot = 0;
+	while (str[mot])
 	{
-		if (str[i] >= '0' && str[i] <= '9' || str[i] == '-')
-			i++;
-		else
-			error_msg("You can only put number in the array !");
+		caractere = 0;
+		if (str[mot][caractere] == '-')
+			caractere++;
+		while (str[mot][caractere])
+		{
+			if (str[mot][caractere] >= '0' &&
+			str[mot][caractere] <= '9' || str[mot][caractere] == '-')
+				caractere++;
+			else
+				error_msg("You can only put number in the array !");
+		}
 	}
 }
+
 
