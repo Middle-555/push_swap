@@ -6,9 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:13:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 14:39:02 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:18:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+char	**init_tab(char *str)
+{
+	char	**tab;
+
+	tab = ft_split(str, 32);
+	return (tab);
+}
 
