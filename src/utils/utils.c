@@ -6,16 +6,34 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:13:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 17:09:59 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 17:51:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-char	**init_tab(char *str)
+char	add_tab(int argc, char **argv)
+{
+	char	**tab;
+	int		i;
+
+	i = 0;
+	while (i < argc - 1)
+	{
+		tab[i] = ft_strdup(argv[i + 1]);
+		i++;
+	}
+	tab[i] = NULL;
+	return (tab);
+}
+
+char	**init_tab(int argc, char **argv)
 {
 	char	**tab;
 
-	tab = ft_split(str, 32);
+	if (argc == 2)
+		tab = ft_split(argv[1], 32);
+	else
+		tab = add_tab(argc, argv);
 	return (tab);
 }

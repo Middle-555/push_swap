@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 15:40:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 17:54:26 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_data
-{
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-}					t_data;
+
 typedef struct s_stack
 {
 	struct s_stack	*next;
@@ -33,6 +29,11 @@ typedef struct s_stack
 	int				cost;
 }					t_stack;
 
+typedef struct s_data
+{
+	t_stack			*stack_a;
+	t_stack			*stack_b;
+}					t_data;
 //error_handling
 
 // -> error_utils.c
@@ -48,6 +49,8 @@ void	error_msg(char *str);
 //utils
 
 // -> utils.c
+char	**init_tab(int argc, char **argv);
+char	add_tab(int argc, char **argv);
 
 // main.c
 #endif
