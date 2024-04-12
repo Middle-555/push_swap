@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:38:53 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/10/30 11:02:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:42:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

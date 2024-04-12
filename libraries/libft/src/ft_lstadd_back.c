@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:42:58 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/10/23 16:39:53 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:42:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhexa_low.c                                 :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 15:17:10 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/11/06 11:59:23 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/24 13:27:32 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/02/19 16:10:19 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	ft_printhexa_low(unsigned long nb)
+int	ft_putchar(char c)
 {
-	char	*tab;
 	int		count;
 
 	count = 0;
-	tab = "0123456789abcdef";
-	if (nb < 16)
-		count += ft_putchar(tab[nb]);
-	else
-	{
-		count += ft_printhexa_low (nb / 16);
-		count += ft_putchar(tab [nb % 16]);
-	}
+	count += write(1, &c, 1);
 	return (count);
 }

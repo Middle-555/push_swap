@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 13:22:33 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/10/11 15:36:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:42:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 int	ft_isascii(int c)
 {

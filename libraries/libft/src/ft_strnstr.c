@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:50:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/10/11 15:37:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:42:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:25:10 by kpourcel          #+#    #+#             */
-/*   Updated: 2023/11/06 13:50:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:43:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_format(char format_type, va_list args)
 {
@@ -28,9 +28,9 @@ int	ft_format(char format_type, va_list args)
 	else if (format_type == 'X')
 		count += ft_printhexa_upper((long)va_arg(args, unsigned int));
 	else if (format_type == 'd')
-		count += ft_putnbr2(va_arg(args, int));
+		count += ft_putnbr(va_arg(args, int));
 	else if (format_type == 'i')
-		count += ft_putnbr2(va_arg(args, int));
+		count += ft_putnbr(va_arg(args, int));
 	else if (format_type == '%')
 		count += ft_putchar('%');
 	else if (format_type == 'u')

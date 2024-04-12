@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 17:09:45 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 19:03:28 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	check_number(char **str)
 			caractere++;
 		while (str[mot][caractere])
 		{
-			if (str[mot][caractere] >= '0' &&
-			str[mot][caractere] <= '9' || str[mot][caractere] == '-')
+			if ((str[mot][caractere] >= '0' &&
+			str[mot][caractere] <= '9' )|| str[mot][caractere] == '-')
 				caractere++;
 			else
 				error_msg("You can only put number in the array !");

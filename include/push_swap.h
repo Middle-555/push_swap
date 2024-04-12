@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 17:54:26 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/12 19:05:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libraries/ft_printf/include/ft_printf.h"
+# include "../libraries/get_next_line/include/get_next_line.h"
+# include "../libraries/libft/include/libft.h"
 
 
 typedef struct s_stack
@@ -50,7 +53,7 @@ void	error_msg(char *str);
 
 // -> utils.c
 char	**init_tab(int argc, char **argv);
-char	add_tab(int argc, char **argv);
+char	**add_tab(int argc, char **argv);
 
 // main.c
 #endif

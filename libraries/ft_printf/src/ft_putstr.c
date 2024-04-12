@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr2.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 13:33:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/02/01 14:23:33 by kpourcel         ###   ########.fr       */
+/*   Created: 2023/10/24 13:30:42 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/02/19 16:10:19 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	ft_putnbr(int nb)
+int	ft_putstr(char *src)
 {
+	int		i;
 	int		count;
 
 	count = 0;
-	if (nb == -2147483648)
+	i = 0;
+	if (src == NULL)
+		return (write(1, "(null)", 6));
+	while (src[i])
 	{
-		count += write(1, "-2147483648", 11);
-		return (count);
-	}
-	if (nb >= 0 && nb <= 9)
-	{
-		count += ft_putchar(nb + '0');
-	}
-	else if (nb < 0)
-	{
-		count += ft_putchar ('-');
-		count += ft_putnbr2 (nb * (-1));
-	}
-	else
-	{
-		count += ft_putnbr2 (nb / 10);
-		count += ft_putnbr2 (nb % 10);
+		count += write(1, &src[i], 1);
+		i++;
 	}
 	return (count);
 }
