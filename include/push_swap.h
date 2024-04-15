@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 17:27:44 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:46:50 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ long	ft_atol(const char *str);
 // -> error.c
 void	error_msg(char *str);
 void	all_error_checking(char **tab);
+
+// -> free.c
+void	free_tab(char **tab);
 
 //move
 

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 15:34:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 18:50:01 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/04/15 18:41:20 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/04/15 18:45:10 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	error_msg(char *str)
+void	free_tab(char **tab)
 {
-	ft_printf("Error\n");
-	ft_printf("%s\n", str);
-	exit(0);
-}
+	int	w;
 
-void	all_error_checking(char **tab)
-{
-	check_number(tab);
-	int_checker(tab);
+	w = 0;
+	while (tab[w])
+	{
+		while (tab[w])
+		{
+			free(tab[w]);
+			w++;
+		}
+	}
+	free(tab);
 }

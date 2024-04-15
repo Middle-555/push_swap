@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 18:09:55 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:51:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	check_number(char **tab)
 			if ((tab[w][c] >= '0' && tab[w][c] <= '9') || tab[w][c] == '-')
 				c++;
 			else
+			{
+				free_tab(tab);
 				error_msg("You can only put number in the array !");
+			}
 		}
 		w++;
 	}
@@ -69,7 +72,10 @@ void	int_checker(char **tab)
 	{
 		nbr = ft_atol(tab[i]);
 		if (nbr <= -2147483647 || nbr >= 2147483647)
+		{
+			free_tab(tab);
 			error_msg("The value need to be an INT");
+		}
 		i++;
 	}
 }
