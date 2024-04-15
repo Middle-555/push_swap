@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 16:13:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 16:38:28 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/04/15 16:33:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-char	**add_tab(int argc, char **argv)
+/*
+* Check if we store correctly our input.
+*/
+void	print_tab(char **tab)
 {
-	char	**tab;
-	int		i;
+	int	w;
 
-	i = 0;
-	tab = malloc(sizeof(char *) * argc);
-	if (!tab)
-		return (NULL);
-	while (i < argc - 1)
+	w = 0;
+	while (tab[w])
 	{
-		tab[i] = ft_strdup(argv[i + 1]);
-		i++;
+		ft_printf("New word :");
+		ft_printf("%s\n", tab[w]);
+		w++;
 	}
-	tab[i] = NULL;
-	return (tab);
-}
-
-char	**init_tab(int argc, char **argv)
-{
-	char	**tab;
-
-	if (argc == 2)
-		tab = ft_split(argv[1], 32);
-	else
-		tab = add_tab(argc, argv);
-	return (tab);
 }

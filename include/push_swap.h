@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 19:05:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:36:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_data
 void	check_number(char **str);
 // -> error.c
 void	error_msg(char *str);
+void	all_error_checking(char **tab);
 
 //move
 
@@ -54,6 +55,8 @@ void	error_msg(char *str);
 // -> utils.c
 char	**init_tab(int argc, char **argv);
 char	**add_tab(int argc, char **argv);
+// -> test.c
+void	print_tab(char **tab);
 
 // main.c
 #endif
