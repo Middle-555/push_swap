@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 18:51:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:02:12 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,40 @@ void	int_checker(char **tab)
 		{
 			free_tab(tab);
 			error_msg("The value need to be an INT");
+		}
+		i++;
+	}
+}
+
+int	get_tab_size(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i] != NULL)
+		i++;
+	return (i);
+}
+
+void	check_duplicates(char **tab)
+{
+	int	i;
+	int	j;
+	int	size;
+
+	size = get_tab_size(tab);
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (ft_strcmp(tab[i], tab[j]) == 0)
+			{
+				error_msg("Error : Double are not allowed\n");
+				free_tab(tab);
+			}
+			j++;
 		}
 		i++;
 	}

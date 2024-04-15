@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 18:46:50 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:01:00 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ typedef struct s_data
 // -> error_utils.c
 void	check_number(char **tab);
 void	int_checker(char **tab);
+void	check_double(char **tab);
 long	ft_atol(const char *str);
+void	check_duplicates(char **tab);
+int		get_tab_size(char **tab);
 
 // -> error.c
 void	error_msg(char *str);
@@ -61,6 +64,7 @@ void	free_tab(char **tab);
 // -> utils.c
 char	**init_tab(int argc, char **argv);
 char	**add_tab(int argc, char **argv);
+int		ft_strcmp(char *s1, char *s2);
 // -> test.c
 void	print_tab(char **tab);
 

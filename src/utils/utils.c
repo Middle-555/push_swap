@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:13:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 16:38:28 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:00:28 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,14 @@ char	**init_tab(int argc, char **argv)
 	else
 		tab = add_tab(argc, argv);
 	return (tab);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	while (*s1 && (*s1 == *s2))
+	{
+		s1 += 1;
+		s2 += 1;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

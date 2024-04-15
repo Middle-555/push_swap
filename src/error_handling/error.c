@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:34:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 19:32:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:57:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void	all_error_checking(char **tab)
 {
 	check_number(tab);
 	int_checker(tab);
+	check_duplicates(tab);
 }
-
-zzzea
