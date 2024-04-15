@@ -6,31 +6,34 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/12 19:03:28 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:48:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
+/*
+* w =  Word;
+* c =  caractere;
+*/
 void	check_number(char **str)
 {
-	int	mot;
-	int	caractere;
+	int	w;
+	int	c;
 
-	mot = 0;
-	while (str[mot])
+	w = 0;
+	while (str[w])
 	{
-		caractere = 0;
-		if (str[mot][caractere] == '-')
-			caractere++;
-		while (str[mot][caractere])
+		c = 0;
+		if (str[w][c] == '-')
+			c++;
+		while (str[w][c])
 		{
-			if ((str[mot][caractere] >= '0' &&
-			str[mot][caractere] <= '9' )|| str[mot][caractere] == '-')
-				caractere++;
+			if ((str[w][c] >= '0' && str[w][c] <= '9') || str[w][c] == '-')
+				c++;
 			else
 				error_msg("You can only put number in the array !");
 		}
-		mot++;
+		w++;
 	}
 }
