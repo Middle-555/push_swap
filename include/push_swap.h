@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/15 20:01:00 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:02:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "../libraries/get_next_line/include/get_next_line.h"
 # include "../libraries/libft/include/libft.h"
 
-
 typedef struct s_stack
 {
 	struct s_stack	*next;
@@ -37,6 +36,7 @@ typedef struct s_data
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 }					t_data;
+
 //error_handling
 
 // -> error_utils.c
@@ -49,6 +49,7 @@ int		get_tab_size(char **tab);
 
 // -> error.c
 void	error_msg(char *str);
+void	sign_checking(char **tab);
 void	all_error_checking(char **tab);
 
 // -> free.c
@@ -57,7 +58,6 @@ void	free_tab(char **tab);
 //move
 
 // -> movement.c
-
 
 //utils
 
