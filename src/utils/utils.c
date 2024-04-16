@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:13:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/16 11:57:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:05:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
-

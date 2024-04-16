@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/16 11:58:18 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:05:47 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ void	check_number(char **tab)
 	while (tab[w])
 	{
 		c = 0;
-		if (tab[w][c] == '-')
+		if (tab[w][c] == '-' || tab[w][c] == '+')
 			c++;
 		while (tab[w][c])
 		{
-			if ((tab[w][c] >= '0' && tab[w][c] <= '9') || tab[w][c] == '-')
+			if ((tab[w][c] >= '0' && tab[w][c] <= '9') || tab[w][c] == '-'
+				|| tab[w][c] == '+')
 				c++;
 			else
 			{
