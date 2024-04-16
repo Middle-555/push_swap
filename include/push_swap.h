@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/16 12:02:05 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:29:22 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct s_stack
 {
 	struct s_stack	*next;
+	struct s_stack	*prev;
 	struct s_stack	*target;
 	int				index;
 	int				value;
