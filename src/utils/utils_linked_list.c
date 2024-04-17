@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:21:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 13:36:36 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:18:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_stack	*lst_new(t_stack *stack, int pos, int value)
 {
 	t_stack	*new_node;
 	t_stack	*last;
-
 
 	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
@@ -61,4 +60,3 @@ void	init_stack(t_data *data)
 	data->stack_a = NULL;
 	data->stack_b = NULL;
 }
-

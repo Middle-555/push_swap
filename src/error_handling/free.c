@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:41:20 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 15:11:47 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:13:58 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	free_tab(char **tab)
 	free(tab);
 }
 
+// test -> ok. 
 void	free_linked_list(t_stack *lst)
 {
 	t_stack	*temp;
