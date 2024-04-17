@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 15:11:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:33:22 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ t_stack				*lst_new(t_stack *stack, int pos, int value);
 void				fill_stack_a(char **tab, t_data *data);
 t_stack				*lst_last(t_stack *lst);
 void				init_stack(t_data *data);
+int					lst_size(t_stack *lst);
 // -> test.c
 void				print_tab(char **tab);
 void				lst_print(t_stack *lst);

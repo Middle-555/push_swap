@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:11:18 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/02/19 16:42:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:28:19 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	size_t	size;
+	int	size;
 
 	size = 0;
 	while (lst)

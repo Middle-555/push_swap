@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:21:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 15:18:42 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:33:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,17 @@ void	init_stack(t_data *data)
 {
 	data->stack_a = NULL;
 	data->stack_b = NULL;
+}
+
+int	lst_size(t_stack *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst ->next;
+	}
+	return (size);
 }
