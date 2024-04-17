@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 14:20:43 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:36:32 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@ void	print_tab(char **tab)
 }
 
 void	lst_print(t_stack *lst)
-		// rajoute le pointeur ici & c'est un void (comme putstr ou putchar)
 {
-	while (lst != NULL) // la node apres ta derniere c'est NULL
+	while (lst != NULL)
 	{
 		ft_printf("value : %d\n", lst->value);
 		lst = lst->next;
-			// gere mieux le printf (je sais pas ce que c'est dans ta structure)
 	}
 }

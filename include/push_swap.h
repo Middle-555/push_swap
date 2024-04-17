@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 13:38:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:11:08 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void				all_error_checking(char **tab);
 
 // -> free.c
 void				free_tab(char **tab);
+void				free_linked_list(t_stack *lst);
 
 // move
 
