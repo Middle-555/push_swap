@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 14:53:42 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:34:32 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,15 @@ void				free_linked_list(t_stack *lst);
 // -> push.c
 
 // -> reverse_rotate.c
-
+void				reverse_rotate(t_stack **stack);
+void				rr_stack_a(t_stack **stack_a);
+void				rr_stack_b(t_stack **stack_b);
+void				rr_both_stack(t_stack **stack_a, t_stack **stack_b);
 // -> rotate.c
 void				rotate(t_stack **stack);
+void				rotate_stack_a(t_stack **stack_a);
+void				rotate_stack_b(t_stack **stack_b);
+void				rotate_both_stack(t_stack **stack_a, t_stack **stack_b);
 
 // -> swap.c
 void				swap(t_stack **stack);
