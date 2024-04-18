@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/17 15:33:22 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:00:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,13 @@ void				free_linked_list(t_stack *lst);
 
 // move
 
-// -> movement.c
+// -> push.c
+
+// -> reverse_rotate.c
+
+// -> rotate.c
+
+// -> swap.c
 
 // utils
 
