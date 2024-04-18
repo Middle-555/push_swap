@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 14:40:59 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:01:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ int	main(int argc, char **argv)
 		fill_stack_a(tab, &data);
 		lst_print(data.stack_a);
 		ft_printf("\nSize  : %d\n", lst_size(data.stack_a));
-		//swap(&data.stack_a);
-		//lst_print(data.stack_a);
 	}
 }

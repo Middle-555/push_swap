@@ -6,29 +6,29 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:57:19 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 14:49:32 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:30:16 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief This function is a swap of value between our first element 
- * and our next element.
+ * @brief This function is a swap of value between our first node 
+ * and our next node.
  * @param stack We choose on which stack we want to apply this swap.
  * it can be stack_a, stack_b or both.
  */
 void	swap(t_stack **stack)
 {
-	t_stack	*first_element;
+	t_stack	*first_node;
 	int		stock_value;
 
-	if (!*stack)
+	if (!(*stack) || !(*stack)->next)
 		return ;
-	first_element = *stack;
-	stock_value = first_element->value;
-	first_element->value = first_element->next->value;
-	first_element->next->value = stock_value;
+	first_node = *stack;
+	stock_value = first_node->value;
+	first_node->value = first_node->next->value;
+	first_node->next->value = stock_value;
 	return ;
 }
 
