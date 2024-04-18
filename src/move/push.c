@@ -6,13 +6,13 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:50:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 12:55:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:36:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	push(t_stack **actual_stack, t_stack **dest_stack)
+/*void	push(t_stack **actual_stack, t_stack **dest_stack)
 {
 	
-}
+}*/

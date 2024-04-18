@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 14:34:03 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:46:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void				free_linked_list(t_stack *lst);
 
 // -> swap.c
 void				swap(t_stack **stack);
+void				swap_stack_a(t_stack **stack_a);
+void				swap_stack_b(t_stack **stack_b);
+void				swap_both_stack(t_stack **stack_a, t_stack **stack_b);
 
 // utils
 
