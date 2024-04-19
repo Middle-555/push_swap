@@ -6,12 +6,16 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:57:15 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 19:05:39 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:46:40 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
+/**
+ * @brief 
+ * 
+ * @param 
+ */
 void	rotate(t_stack **stack)
 {
 	t_stack	*last_node;

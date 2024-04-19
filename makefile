@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/04/18 13:00:23 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/04/19 14:25:00 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIB_DIR		=	libraries/
 
 # .c and .o files
 ERROR		= 	error_utils.c error.c free.c
-UTILS		= 	utils.c test.c utils_linked_list.c
+UTILS		= 	utils.c test.c utils_linked_list.c utils2_linked_list.c
 MOVE		=	push.c reverse_rotate.c rotate.c swap.c
 SRC		=	main.c $(ERROR) $(UTILS) $(MOVE)
 OBJ		=	$(SRC:%.c=$(OBJ_DIR)%.o)
