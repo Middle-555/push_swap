@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 16:17:47 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:16:31 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 	char	**tab;
+	t_stack	*highest_node;
 
 	if (argc == 1)
 		error_msg("./push_swap [array of int]");
@@ -27,5 +28,7 @@ int	main(int argc, char **argv)
 		init_stack(&data);
 		fill_stack_a(tab, &data);
 		lst_print(data.stack_a);
+		highest_node = find_highest_node(&data.stack_a);
+		ft_printf("%d\n", highest_node->value);
 	}
 }
