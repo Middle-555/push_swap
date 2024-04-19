@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 15:15:44 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:03:40 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int					lst_size(t_stack *lst);
 
 // -> utils2_linked_list.c
 t_stack				*creade_new_node(int value);
-void				*add_on_top(t_stack **stack, t_stack *new_node);
+void				add_on_top(t_stack **stack, t_stack *new_node);
 
 // -> test.c
 void				print_tab(char **tab);

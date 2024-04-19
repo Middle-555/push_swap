@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:50:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 15:13:58 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:04:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	push(t_stack **actual_stack, t_stack **dest_stack)
 	t_stack	*node_to_move;
 	t_stack	*new_node;
 
-	node_to_move = actual_stack;
+	node_to_move = *actual_stack;
 	new_node = creade_new_node(node_to_move->value);
 	if (!new_node)
-		return (NULL);
+		return ;
 	*actual_stack = node_to_move->next;
 	node_to_move->next = NULL;
 	add_on_top(dest_stack, new_node);
