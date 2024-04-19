@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 17:05:39 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:21:52 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ void				swap_both_stack(t_stack **stack_a, t_stack **stack_b);
 
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
+t_stack				*find_lowest_node(t_stack **stack);
+
 // utils
 
 // -> utils.c
