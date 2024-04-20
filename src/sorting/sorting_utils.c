@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 17:23:53 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:58:36 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 t_stack	*find_highest_node(t_stack **stack)
 {
 	t_stack	*highest;
+	t_stack	*temp;
 	int		highest_value;
 
 	highest_value = INT_MIN;
 	highest = *stack;
-	while (*stack != NULL)
+	temp = *stack;
+	while (temp != NULL)
 	{
-		if (highest_value < (*stack)->value)
+		if (highest_value < temp->value)
 		{
-			highest_value = (*stack)->value;
-			highest = *stack;
+			highest_value = temp->value;
+			highest = temp;
 		}
-		*stack = (*stack)->next;
+		temp = temp->next;
 	}
 	return (highest);
 }
@@ -34,18 +36,20 @@ t_stack	*find_highest_node(t_stack **stack)
 t_stack	*find_lowest_node(t_stack **stack)
 {
 	t_stack	*lowest;
+	t_stack	*temp;
 	int		lowest_value;
 
 	lowest_value = INT_MAX;
 	lowest = *stack;
-	while (*stack != NULL)
+	temp = *stack;
+	while (temp != NULL)
 	{
-		if (lowest_value > (*stack)->value)
+		if (lowest_value > temp->value)
 		{
-			lowest_value = (*stack)->value;
-			lowest = *stack;
+			lowest_value = temp->value;
+			lowest = temp;
 		}
-		*stack = (*stack)->next;
+		temp = temp->next;
 	}
 	return (lowest);
 }

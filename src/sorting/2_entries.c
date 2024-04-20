@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   2_entries.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/20 12:50:16 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/04/20 12:29:32 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/04/20 13:01:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-/*
- * Check if we store correctly our input.
- */
-void	print_tab(char **tab)
+void	sort_2_entries(t_stack **stack)
 {
-	int	w;
+	t_stack		*lowest;
 
-	w = 0;
-	while (tab[w])
-	{
-		ft_printf("New word :");
-		ft_printf("%s\n", tab[w]);
-		w++;
-	}
-}
-
-void	lst_print(t_stack *lst)
-{
-	while (lst != NULL)
-	{
-		ft_printf("value : %d\n", lst->value);
-		lst = lst->next;
-	}
+	lowest = find_lowest_node(stack);
+	if ((*stack) != lowest)
+		swap_stack_a(stack);
+	else
+		return ;
 }
