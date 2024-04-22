@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:34:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/16 12:09:37 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:32:48 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ void	sign_checking(char **tab)
 			c++;
 		}
 		if (sign > 1)
+		{
+			free_tab(tab);
 			error_msg("please put valid number");
+		}
 		sign = 0;
 		w++;
 	}

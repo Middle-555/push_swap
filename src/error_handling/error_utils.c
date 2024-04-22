@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 17:28:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:32:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	check_duplicates(char **tab)
 		{
 			if (ft_atol(tab[i]) == ft_atol(tab[j]))
 			{
-				error_msg("Error : Double are not allowed\n");
 				free_tab(tab);
+				error_msg("Error : Double are not allowed\n");
 			}
 			j++;
 		}
