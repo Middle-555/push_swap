@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 17:16:07 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:17:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	int_checker(char **tab)
 	while (tab[i])
 	{
 		nbr = ft_atol(tab[i]);
-		if (nbr <= -2147483647 || nbr >= 2147483647)
+		if (nbr <= INT_MIN || nbr >= INT_MAX)
 		{
 			free_tab(tab);
 			error_msg("The value need to be an INT");
