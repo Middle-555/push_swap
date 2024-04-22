@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 15:15:10 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:35:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int	main(int argc, char **argv)
 			lst_print(data.stack_a);
 		}
 		ft_printf("done.");
+		free_both_stack(&data);
 	}
 }
