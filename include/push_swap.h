@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/20 12:50:22 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:14:58 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,12 @@ void				swap_both_stack(t_stack **stack_a, t_stack **stack_b);
 // -> 2_entries.c
 void				sort_2_entries(t_stack **stack_a);
 // -> 3_entries.c
+void				sort_3_entries(t_stack **stack_a);
 
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
 t_stack				*find_lowest_node(t_stack **stack);
+int					check_lst_sorted(t_stack **stack);
 
 // utils
 

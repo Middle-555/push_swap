@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/20 12:58:36 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:40:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,18 @@ t_stack	*find_lowest_node(t_stack **stack)
 		temp = temp->next;
 	}
 	return (lowest);
+}
+
+int	check_lst_sorted(t_stack **stack)
+{
+	t_stack	*temp;
+
+	temp = *stack;
+	while (temp->next != NULL)
+	{
+		if (temp->value > temp->next->value)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
 }
