@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/20 12:50:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:38:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ void	print_tab(char **tab)
 	}
 }
 
+/**
+ * @brief Used to print the value of each node during my test.
+ * @param lst 
+ */
 void	lst_print(t_stack *lst)
 {
 	while (lst != NULL)
