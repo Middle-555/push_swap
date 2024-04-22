@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/16 12:09:22 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:16:07 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ void	check_number(char **tab)
 	while (tab[w])
 	{
 		c = 0;
-		if (tab[w][c] == '-')
+		if ((tab[w][c] == '-' || tab[w][c] == '+') &&
+			(!(tab[w][c + 1] >= '0' && tab[w][c + 1] <= '9')))
+			error_msg("You need to put a number after - or +");
+		if (tab[w][c] == '-' || tab[w][c] == '+')
 			c++;
 		while (tab[w][c])
 		{
-			if ((tab[w][c] >= '0' && tab[w][c] <= '9') || tab[w][c] == '-')
+			if ((tab[w][c] >= '0' && tab[w][c] <= '9'))
 				c++;
 			else
 			{
@@ -103,7 +106,7 @@ void	check_duplicates(char **tab)
 		j = i + 1;
 		while (j < size)
 		{
-			if (ft_strcmp(tab[i], tab[j]) == 0)
+			if (ft_atol(tab[i]) == ft_atol(tab[j]))
 			{
 				error_msg("Error : Double are not allowed\n");
 				free_tab(tab);
