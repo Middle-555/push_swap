@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/04/22 17:29:59 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/04/22 18:54:38 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ $(LIBFT)        :    $(LIB_DIR)
 	@make all -sC $<
 	@echo "\033[0;32mLibft successfuly compiled -> ✅\033[0m\n"
 
+
 # Create the obj directory
 $(OBJ_DIR)        :
 	@mkdir -p $@
@@ -56,14 +57,13 @@ $(OBJ_DIR)        :
 # Compile .c to .o files
 $(OBJ_DIR)%.o    :    %.c | $(OBJ_DIR)
 	@echo "\033[0;33mCompiling project src -> ⏳\033[0m"
-	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	@$(CC) $(CFLAGS) -c $< -o $@ -I include/
 	@echo "\033[0;32mSrc's project successfuly compiled -> ✅\033[0m\n"
-
 
 # Clean, fclean and re rules
 clean            :
 	@echo "\033[0;31mCleaning obj files -> 🗑️\033[0m"
-	@if [ -d "$(OBJ_DIR)" ]; then rm -rf $(OBJ_DIR); fi
+	@if [ -d "$(OBJ_DIR)" ]; then rm -rf $(OBJ_DIR)*; fi
 	@make clean -sC $(LIB_DIR)
 	@echo "\033[0;32mDone -> ✅\033[0m\n"
 
