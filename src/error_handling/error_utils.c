@@ -6,43 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 17:17:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:28:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
-/*
- * w =  Word;
- * c =  caractere;
- */
-void	check_number(char **tab)
-{
-	int	w;
-	int	c;
-
-	w = 0;
-	while (tab[w])
-	{
-		c = 0;
-		if ((tab[w][c] == '-' || tab[w][c] == '+') &&
-			(!(tab[w][c + 1] >= '0' && tab[w][c + 1] <= '9')))
-			error_msg("You need to put a number after - or +");
-		if (tab[w][c] == '-' || tab[w][c] == '+')
-			c++;
-		while (tab[w][c])
-		{
-			if ((tab[w][c] >= '0' && tab[w][c] <= '9'))
-				c++;
-			else
-			{
-				free_tab(tab);
-				error_msg("You can only put number in the array !");
-			}
-		}
-		w++;
-	}
-}
 
 long	ft_atol(const char *str)
 {

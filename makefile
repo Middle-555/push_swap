@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/04/22 15:38:43 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/04/22 17:29:59 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ_DIR		=	obj/
 LIB_DIR		=	libraries/
 
 # .c and .o files
-ERROR		= 	error_utils.c error.c free.c
+ERROR		= 	error_utils.c error.c free.c check_number.c
 UTILS		= 	utils.c test.c utils_linked_list.c utils2_linked_list.c
 MOVE		=	push.c reverse_rotate.c rotate.c swap.c
 SORTING		=	sorting_utils.c 3_entries.c 2_entries.c sorting.c
