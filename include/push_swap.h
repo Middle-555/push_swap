@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 11:31:31 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:57:45 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,10 @@ void				sort_2_entries(t_stack **stack_a);
 // -> 3_entries.c
 void				sort_3_entries(t_stack **stack_a);
 
+// -> index.c
+void				find_index(t_stack **stack);
 // -> init_algo.c
 void				start_push_b(t_stack **stack_a, t_stack **stack_b);
-void				find_index(t_stack **stack);
 void				init_stack_for_sorting(t_stack **stack_a,
 						t_stack **stack_b);
 
@@ -105,6 +106,14 @@ int					check_lst_sorted(t_stack **stack);
 
 // -> sorting.c
 void				entries_handler(t_stack **stack);
+
+// -> target_utils.c
+void				find_highest_target_for_node(t_stack *node_a,
+						t_stack *stack_b);
+
+// -> target.c
+void				find_target_in_stack_b(t_stack **stack_b,
+						t_stack **stack_a);
 
 // utils
 
