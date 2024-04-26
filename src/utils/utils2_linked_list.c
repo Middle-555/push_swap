@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:20:15 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 16:03:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:57:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,21 @@ void	add_on_top(t_stack **stack, t_stack *new_node)
 {
 	new_node->next = *stack;
 	*stack = new_node;
+}
+
+int	stack_size(t_stack **stack)
+{
+	t_stack	*temp;
+	int		size;
+
+	temp = *stack;
+	size = 0;
+	if (*stack == NULL)
+		return (0);
+	while (temp->next != NULL)
+	{
+		size++;
+		temp = temp->next;
+	}
+	return (size);
 }
