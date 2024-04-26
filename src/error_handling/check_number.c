@@ -6,11 +6,18 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:28:24 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 17:29:07 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:50:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @param tab 
+ */
 
 void	check_sign_and_number(char *str, char **tab)
 {
@@ -36,6 +43,12 @@ void	check_sign_and_number(char *str, char **tab)
 		}
 	}
 }
+
+/**
+ * @brief 
+ * 
+ * @param tab 
+ */
 
 void	check_number(char **tab)
 {

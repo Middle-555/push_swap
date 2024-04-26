@@ -6,11 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:58:54 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/18 19:34:56 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:49:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param stack 
+ */
 
 void	reverse_rotate(t_stack **stack)
 {
@@ -31,6 +37,12 @@ void	reverse_rotate(t_stack **stack)
 	*stack = last;
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ */
+
 void	rr_stack_a(t_stack **stack_a)
 {
 	reverse_rotate(stack_a);
@@ -38,12 +50,25 @@ void	rr_stack_a(t_stack **stack_a)
 	return ;
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack_b 
+ */
+
 void	rr_stack_b(t_stack **stack_b)
 {
 	reverse_rotate(stack_b);
 	ft_printf("rrb\n");
 	return ;
 }
+
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 
 void	rr_both_stack(t_stack **stack_a, t_stack **stack_b)
 {

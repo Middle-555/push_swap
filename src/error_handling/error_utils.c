@@ -6,11 +6,18 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:00:45 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 17:32:59 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:50:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @return long 
+ */
 
 long	ft_atol(const char *str)
 {
@@ -33,6 +40,12 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
+/**
+ * @brief 
+ * 
+ * @param tab 
+ */
+
 void	int_checker(char **tab)
 {
 	int		i;
@@ -51,6 +64,13 @@ void	int_checker(char **tab)
 	}
 }
 
+/**
+ * @brief Get the tab size object
+ * 
+ * @param tab 
+ * @return int 
+ */
+
 int	get_tab_size(char **tab)
 {
 	int	i;
@@ -60,6 +80,12 @@ int	get_tab_size(char **tab)
 		i++;
 	return (i);
 }
+
+/**
+ * @brief 
+ * 
+ * @param tab 
+ */
 
 void	check_duplicates(char **tab)
 {

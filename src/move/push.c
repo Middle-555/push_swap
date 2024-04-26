@@ -6,11 +6,18 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:50:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/19 16:04:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:50:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param actual_stack 
+ * @param dest_stack 
+ */
 
 void	push(t_stack **actual_stack, t_stack **dest_stack)
 {
@@ -28,12 +35,26 @@ void	push(t_stack **actual_stack, t_stack **dest_stack)
 	return ;
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
+
 void	push_to_stack_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	ft_printf("pa\n");
 	return ;
 }
+
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 
 void	push_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 {

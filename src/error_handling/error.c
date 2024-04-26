@@ -6,11 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:34:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 17:32:48 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:50:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param str 
+ */
 
 void	error_msg(char *str)
 {
@@ -18,6 +24,12 @@ void	error_msg(char *str)
 	ft_printf("%s\n", str);
 	exit(0);
 }
+
+/**
+ * @brief 
+ * 
+ * @param tab 
+ */
 
 void	sign_checking(char **tab)
 {
@@ -45,6 +57,12 @@ void	sign_checking(char **tab)
 		w++;
 	}
 }
+
+/**
+ * @brief 
+ * 
+ * @param tab 
+ */
 
 void	all_error_checking(char **tab)
 {

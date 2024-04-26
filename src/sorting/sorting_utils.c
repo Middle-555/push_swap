@@ -6,11 +6,18 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 14:40:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:46:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param stack 
+ * @return t_stack* 
+ */
 
 t_stack	*find_highest_node(t_stack **stack)
 {
@@ -33,6 +40,13 @@ t_stack	*find_highest_node(t_stack **stack)
 	return (highest);
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack 
+ * @return t_stack* 
+ */
+
 t_stack	*find_lowest_node(t_stack **stack)
 {
 	t_stack	*lowest;
@@ -54,6 +68,12 @@ t_stack	*find_lowest_node(t_stack **stack)
 	return (lowest);
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack 
+ * @return int 
+ */
 int	check_lst_sorted(t_stack **stack)
 {
 	t_stack	*temp;

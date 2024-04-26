@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 11:48:00 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:46:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ void	start_push_b(t_stack **stack_a, t_stack **stack_b)
 	push_to_stack_b(stack_a, stack_b);
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack 
+ */
 void	find_index(t_stack **stack)
 {
 	t_stack	*temp;
@@ -50,6 +55,12 @@ void	find_index(t_stack **stack)
 	}
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 void	init_stack_for_sorting(t_stack **stack_a, t_stack **stack_b)
 {
 	find_index(stack_a);

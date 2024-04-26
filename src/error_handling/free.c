@@ -6,11 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:41:20 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/22 15:34:45 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:50:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param tab 
+ */
 
 void	free_tab(char **tab)
 {
@@ -28,7 +34,13 @@ void	free_tab(char **tab)
 	free(tab);
 }
 
-// test -> ok. 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @return * void 
+ */
+
 void	free_linked_list(t_stack *lst)
 {
 	t_stack	*temp;
@@ -40,6 +52,12 @@ void	free_linked_list(t_stack *lst)
 		free(temp);
 	}
 }
+
+/**
+ * @brief 
+ * 
+ * @param data 
+ */
 
 void	free_both_stack(t_data *data)
 {

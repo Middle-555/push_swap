@@ -6,11 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/25 14:57:12 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:47:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param stack 
+ */
 
 void	entries_handler(t_stack **stack)
 {
