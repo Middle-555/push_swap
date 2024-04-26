@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/25 18:01:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:56:04 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	else
 	{
 		tab = init_tab(argc, argv);
-		print_tab(tab);
 		all_error_checking(tab);
 		init_stack(&data);
 		fill_stack_a(tab, &data);
@@ -30,8 +29,7 @@ int	main(int argc, char **argv)
 		{
 			entries_handler(&data.stack_a);
 		}
-		find_index(&data.stack_a);
-		lst_print(data.stack_a);
+		start_push_b(&data.stack_a, &data.stack_b);
 		free_both_stack(&data);
 	}
 }

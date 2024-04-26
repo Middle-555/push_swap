@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 14:46:57 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:55:18 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_stack	*find_highest_node(t_stack **stack)
 {
 	t_stack	*highest;
 	t_stack	*temp;
-	int		highest_value;
+	long	highest_value;
 
-	highest_value = INT_MIN;
+	highest_value = LONG_MIN;
 	highest = *stack;
 	temp = *stack;
 	while (temp != NULL)
@@ -51,9 +51,9 @@ t_stack	*find_lowest_node(t_stack **stack)
 {
 	t_stack	*lowest;
 	t_stack	*temp;
-	int		lowest_value;
+	long	lowest_value;
 
-	lowest_value = INT_MAX;
+	lowest_value = LONG_MAX;
 	lowest = *stack;
 	temp = *stack;
 	while (temp != NULL)

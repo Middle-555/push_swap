@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 16:57:45 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:58:50 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,4 @@ int					stack_size(t_stack **stack);
 void				print_tab(char **tab);
 void				lst_print(t_stack *lst);
 
-// main.c
 #endif
