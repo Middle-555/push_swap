@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:20:15 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/25 17:57:13 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:56:19 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ void	add_on_top(t_stack **stack, t_stack *new_node)
 	new_node->next = *stack;
 	*stack = new_node;
 }
+
+/**
+ * @brief Returns the number of nodes in the stack.
+ * 
+ * @param stack Pointer to the head of the stack.
+ * @return int Number of nodes in the stack.
+ */
 
 int	stack_size(t_stack **stack)
 {

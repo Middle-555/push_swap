@@ -6,17 +6,17 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 16:49:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:55:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief 
+ * @brief Finds the node with the highest value in the stack.
  * 
- * @param stack 
- * @return t_stack* 
+ * @param stack Pointer to the head of the stack.
+ * @return t_stack* Pointer to the node with the highest value. Returns NULL if the stack is empty.
  */
 
 t_stack	*find_highest_node(t_stack **stack)
@@ -41,10 +41,10 @@ t_stack	*find_highest_node(t_stack **stack)
 }
 
 /**
- * @brief 
+ * @brief Finds the node with the lowest value in the stack.
  * 
- * @param stack 
- * @return t_stack* 
+ * @param stack Pointer to the head of the stack.
+ * @return t_stack* Pointer to the node with the lowest value. Returns NULL if the stack is empty.
  */
 
 t_stack	*find_lowest_node(t_stack **stack)
@@ -69,10 +69,10 @@ t_stack	*find_lowest_node(t_stack **stack)
 }
 
 /**
- * @brief 
+ * @brief Checks if the stack is sorted in ascending order.
  * 
- * @param stack 
- * @return int 
+ * @param stack Pointer to the head of the stack.
+ * @return int Returns 1 if the stack is not sorted, 0 if it is sorted.
  */
 
 int	check_lst_sorted(t_stack **stack)
@@ -87,4 +87,15 @@ int	check_lst_sorted(t_stack **stack)
 		temp = temp->next;
 	}
 	return (0);
+}
+
+/**
+ * @brief Sets the median value of the stack based on its size.
+ * 
+ * @param stack Pointer to the head of the stack.
+ */
+
+void	find_median(t_stack **stack)
+{
+	(*stack)->median = (stack_size(stack) / 2);
 }

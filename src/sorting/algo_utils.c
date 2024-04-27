@@ -6,18 +6,19 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 17:14:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:06:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief 
+ * @brief Searches for the given value in the stack and returns its index.
  * 
- * @param stack 
- * @param value 
- * @return int 
+ * @param stack Pointer to the head of the stack.
+ * @param value The integer value to find in the stack.
+ * @return int The index of the first occurrence of the value in the stack,
+ *             or -1 if the value is not found.
  */
 
 int	find_index(t_stack **stack, int value)
