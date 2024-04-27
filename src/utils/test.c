@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 18:02:23 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:57:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,24 @@ void	lst_print(t_stack *lst)
  */
 void	print_stack_and_targets(t_stack *stack)
 {
-	int		target_value;
-
 	while (stack)
 	{
-		if (stack->target != NULL)
-			target_value = stack->target->value;
-		else
-			target_value = -1;
-		printf("Value: %d, Target: %d\n", stack->value, target_value);
+		printf("Value: %d, Target: %d\n", stack->value,
+			stack->target ? stack->target->value : -1);
+		stack = stack->next;
+	}
+}
+
+/**
+ * @brief Print the stack and associated costs for debugging and verification.
+ *
+ * @param stack Pointer to the top of the stack.
+ */
+void	print_stack_cost(t_stack *stack)
+{
+	while (stack)
+	{
+		ft_printf("Value: %d, Cost: %d\n", stack->value, stack->cost);
 		stack = stack->next;
 	}
 }

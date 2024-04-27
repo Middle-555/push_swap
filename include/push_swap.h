@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 18:02:52 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 22:03:18 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,12 @@ void				sort_2_entries(t_stack **stack_a);
 // -> 3_entries.c
 void				sort_3_entries(t_stack **stack_a);
 
-// -> index.c
-int					find_index(t_stack **stack, int value);
-// -> init_algo.c
-void				start_push_b(t_stack **stack_a, t_stack **stack_b);
-void				find_median(t_stack **stack);						
+// -> algo_utils.c
+//int					find_index(t_stack **stack, int value);
+//void				calculate_movement_cost(t_stack *stack, t_stack *target, int stack_size);
+//void				update_all_costs(t_stack **stack_a, t_stack **stack_b);
+
+// -> algo.c
 
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
@@ -105,10 +106,6 @@ int					check_lst_sorted(t_stack **stack);
 
 // -> sorting.c
 void				entries_handler(t_stack **stack);
-
-// -> target_utils.c
-void				find_highest_target_for_node(t_stack *node_a,
-						t_stack *stack_b);
 
 // -> target.c
 void				find_largest_and_best_target(t_stack *src, t_stack *target,
@@ -138,5 +135,11 @@ int					stack_size(t_stack **stack);
 void				print_tab(char **tab);
 void				lst_print(t_stack *lst);
 void				print_stack_and_targets(t_stack *stack);
+void				print_stack_cost(t_stack *stack);
+
+// test en cours
+int	calculate_cost(int index, int stack_size);
+void	update_all_costs(t_stack **stack_a, t_stack **stack_b);
+int	find_index(t_stack *stack, int value);
 
 #endif

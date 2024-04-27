@@ -6,19 +6,9 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 18:04:59 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:37:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-/**
- * @brief 
- * 
- * @param stack 
- */
-
-void	find_median(t_stack **stack)
-{
-	(*stack)->median = (stack_size(stack) / 2);
-}
