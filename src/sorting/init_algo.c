@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 14:55:04 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:03:29 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@ void	start_push_b(t_stack **stack_a, t_stack **stack_b)
 /**
  * @brief 
  * 
- * @param stack_a 
- * @param stack_b 
+ * @param stack 
  */
 
-void	init_stack_for_sorting(t_stack **stack_a, t_stack **stack_b)
+void	find_median(t_stack **stack)
 {
-	find_index(stack_a);
-	find_index(stack_b);
+	(*stack)->median = (stack_size(stack) / 2);
 }

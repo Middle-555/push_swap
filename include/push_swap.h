@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 16:58:50 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:03:40 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	struct s_stack	*target;
-	int				above_median;
+	int				median;
 	int				index;
 	int				value;
 	int				cost;
@@ -93,11 +93,10 @@ void				sort_2_entries(t_stack **stack_a);
 void				sort_3_entries(t_stack **stack_a);
 
 // -> index.c
-void				find_index(t_stack **stack);
+int					find_index(t_stack **stack, int value);
 // -> init_algo.c
 void				start_push_b(t_stack **stack_a, t_stack **stack_b);
-void				init_stack_for_sorting(t_stack **stack_a,
-						t_stack **stack_b);
+void				find_median(t_stack **stack);						
 
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
