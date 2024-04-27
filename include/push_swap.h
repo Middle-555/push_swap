@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 16:03:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:36:43 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,10 @@ void				find_highest_target_for_node(t_stack *node_a,
 						t_stack *stack_b);
 
 // -> target.c
-void				find_target_in_stack_b(t_stack **stack_b,
-						t_stack **stack_a);
-
+void				find_largest_and_best_target(t_stack *src, t_stack *target,
+				t_stack **best_target, t_stack **largest_elem);
+void				update_target(t_stack *src, t_stack *target);
+void				find_target(t_stack **source, t_stack **target);
 // utils
 
 // -> utils.c

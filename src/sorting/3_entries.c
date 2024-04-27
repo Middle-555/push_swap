@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:28:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 15:27:47 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:48:48 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ void	sort_3_entries(t_stack **stack_a)
 	if ((*stack_a)->value > (*stack_a)->next->value)
 		swap_stack_a(stack_a);
 }
-

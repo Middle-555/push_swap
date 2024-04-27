@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 18:55:18 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:49:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ t_stack	*find_lowest_node(t_stack **stack)
  * @param stack 
  * @return int 
  */
+
 int	check_lst_sorted(t_stack **stack)
 {
 	t_stack	*temp;

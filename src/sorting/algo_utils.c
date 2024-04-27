@@ -6,16 +6,18 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 16:15:37 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:14:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief
- *
- * @param stack
+ * @brief 
+ * 
+ * @param stack 
+ * @param value 
+ * @return int 
  */
 
 int	find_index(t_stack **stack, int value)
@@ -35,16 +37,4 @@ int	find_index(t_stack **stack, int value)
 		temp = temp->next;
 	}
 	return (-1);
-}
-
-void	find_target(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*temp_a;
-	t_stack	*temp_b;
-
-	if (!stack_a || !stack_b)
-		return ;
-	temp_a = *stack_a;
-	temp_b = *stack_b;
-	
 }
