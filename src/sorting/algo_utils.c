@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 22:04:19 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/27 22:06:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,6 @@ void	update_all_costs(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	current_a = *stack_a;
 	int stack_b_size = stack_size(stack_b);
-		// Taille de la pile B pour le calcul des coûts.
 	while (current_a)
 	{
 		if (current_a->target)
@@ -149,7 +148,6 @@ void	update_all_costs(t_stack **stack_a, t_stack **stack_b)
 		else
 		{
 			current_a->cost = -1;
-				// Aucune cible n'a été trouvée ou est inappropriée.
 		}
 		current_a = current_a->next;
 	}
