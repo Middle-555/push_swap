@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 19:57:35 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:58:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,53 @@ void	lst_print(t_stack *lst)
  */
 void	print_stack_and_targets(t_stack *stack)
 {
+	int	target_value;
+
 	while (stack)
 	{
-		printf("Value: %d, Target: %d\n", stack->value,
-			stack->target ? stack->target->value : -1);
+		target_value = -1;
+		if (stack->target != NULL)
+		{
+			target_value = stack->target->value;
+		}
+		printf("Value: %d, Target: %d\n", stack->value, target_value);
 		stack = stack->next;
 	}
 }
 
-/**
- * @brief Print the stack and associated costs for debugging and verification.
- *
- * @param stack Pointer to the top of the stack.
- */
-void	print_stack_cost(t_stack *stack)
+// Function to print the cost details for each element in the stack
+void	print_stack_costs(t_stack *stack)
 {
-	while (stack)
+	int	index;
+
+	index = 0;
+	printf("Cost details for each element in the stack:\n");
+	while (stack != NULL)
 	{
-		ft_printf("Value: %d, Cost: %d\n", stack->value, stack->cost);
+		printf("Element %d: value = %d, cost = %d\n", index, stack->value,
+			stack->cost);
 		stack = stack->next;
+		index++;
+	}
+}
+
+void	print_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	printf("Stack A\t\tStack B\n");
+	printf("-------\t\t-------\n");
+	while (stack_a != NULL || stack_b != NULL)
+	{
+		if (stack_a != NULL)
+			printf("%d\t\t", stack_a->value);
+		else
+			printf("\t\t");
+		if (stack_b != NULL)
+			printf("%d\n", stack_b->value);
+		else
+			printf("\n");
+		if (stack_a != NULL)
+			stack_a = stack_a->next;
+		if (stack_b != NULL)
+			stack_b = stack_b->next;
 	}
 }

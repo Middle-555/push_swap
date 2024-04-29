@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 22:03:18 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:04:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,21 @@
 typedef struct s_stack
 {
 	struct s_stack	*next;
-	struct s_stack	*prev;
 	struct s_stack	*target;
 	int				median;
 	int				index;
 	int				value;
 	int				cost;
 }					t_stack;
+
+typedef struct s_cost
+{
+	int				ra;
+	int				rb;
+	int				rra;
+	int				rrb;
+	int				total_cost;
+}					t_cost;
 
 typedef struct s_data
 {
@@ -93,11 +101,11 @@ void				sort_2_entries(t_stack **stack_a);
 void				sort_3_entries(t_stack **stack_a);
 
 // -> algo_utils.c
-//int					find_index(t_stack **stack, int value);
-//void				calculate_movement_cost(t_stack *stack, t_stack *target, int stack_size);
-//void				update_all_costs(t_stack **stack_a, t_stack **stack_b);
+int					find_index(t_stack **stack, int value);
 
 // -> algo.c
+
+// -> cost.c
 
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
@@ -105,7 +113,7 @@ t_stack				*find_lowest_node(t_stack **stack);
 int					check_lst_sorted(t_stack **stack);
 
 // -> sorting.c
-void				entries_handler(t_stack **stack);
+void				entries_handler(t_stack **stack_a, t_stack **stack_b);
 
 // -> target.c
 void				find_largest_and_best_target(t_stack *src, t_stack *target,
@@ -135,11 +143,11 @@ int					stack_size(t_stack **stack);
 void				print_tab(char **tab);
 void				lst_print(t_stack *lst);
 void				print_stack_and_targets(t_stack *stack);
-void				print_stack_cost(t_stack *stack);
+void				print_stack_costs(t_stack *stack);
+void				print_stacks(t_stack *stack_a, t_stack *stack_b);
 
 // test en cours
-int	calculate_cost(int index, int stack_size);
-void	update_all_costs(t_stack **stack_a, t_stack **stack_b);
-int	find_index(t_stack *stack, int value);
+int					max(int a, int b);
+int					min(int a, int b);
 
 #endif

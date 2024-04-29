@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/04/27 18:07:30 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/04/29 16:03:23 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ ERROR		= 	error_utils.c error.c free.c check_number.c
 UTILS		= 	utils.c test.c utils_linked_list.c utils2_linked_list.c
 MOVE		=	push.c reverse_rotate.c rotate.c swap.c
 SORTING		=	sorting_utils.c 3_entries.c 2_entries.c sorting.c \
-				algo.c algo_utils.c target.c
+				algo.c algo_utils.c target.c cost.c
 SRC		=	main.c $(ERROR) $(UTILS) $(MOVE) $(SORTING)
 OBJ		=	$(SRC:%.c=$(OBJ_DIR)%.o)
 

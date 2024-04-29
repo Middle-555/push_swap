@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 18:55:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:48:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 /**
  * @brief Finds the node with the highest value in the stack.
- * 
+ *
  * @param stack Pointer to the head of the stack.
- * @return t_stack* Pointer to the node with the highest value. Returns NULL if the stack is empty.
+ * @return t_stack* Pointer to the node with the highest value. 
+ * Returns NULL if the stack is empty.
  */
 
 t_stack	*find_highest_node(t_stack **stack)
@@ -42,9 +43,10 @@ t_stack	*find_highest_node(t_stack **stack)
 
 /**
  * @brief Finds the node with the lowest value in the stack.
- * 
+ *
  * @param stack Pointer to the head of the stack.
- * @return t_stack* Pointer to the node with the lowest value. Returns NULL if the stack is empty.
+ * @return t_stack* Pointer to the node with the lowest value. 
+ * Returns NULL if the stack is empty.
  */
 
 t_stack	*find_lowest_node(t_stack **stack)
@@ -70,28 +72,30 @@ t_stack	*find_lowest_node(t_stack **stack)
 
 /**
  * @brief Checks if the stack is sorted in ascending order.
- * 
+ *
  * @param stack Pointer to the head of the stack.
  * @return int Returns 1 if the stack is not sorted, 0 if it is sorted.
  */
 
 int	check_lst_sorted(t_stack **stack)
 {
-	t_stack	*temp;
+	t_stack	*current;
 
-	temp = *stack;
-	while (temp->next != NULL)
+	if (!stack || !*stack)
+		return (0);
+	current = *stack;
+	while (current->next)
 	{
-		if (temp->value > temp->next->value)
-			return (1);
-		temp = temp->next;
+		if (current->value > current->next->value)
+			return (0);
+		current = current->next;
 	}
-	return (0);
+	return (1);
 }
 
 /**
  * @brief Sets the median value of the stack based on its size.
- * 
+ *
  * @param stack Pointer to the head of the stack.
  */
 
