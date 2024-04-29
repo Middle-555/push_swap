@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 16:04:53 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:19:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,11 @@ typedef struct s_stack
 	int				cost;
 }					t_stack;
 
-typedef struct s_cost
+typedef struct s_rotation
 {
-	int				ra;
-	int				rb;
-	int				rra;
-	int				rrb;
-	int				total_cost;
-}					t_cost;
+	int				rot_a;
+	int				rot_b;
+}					t_rotation;
 
 typedef struct s_data
 {
@@ -116,10 +113,7 @@ int					check_lst_sorted(t_stack **stack);
 void				entries_handler(t_stack **stack_a, t_stack **stack_b);
 
 // -> target.c
-void				find_largest_and_best_target(t_stack *src, t_stack *target,
-						t_stack **best_target, t_stack **largest_elem);
-void				update_target(t_stack *src, t_stack *target);
-void				find_target(t_stack **source, t_stack **target);
+int					find_target_index(t_stack *src, t_stack *target);
 // utils
 
 // -> utils.c

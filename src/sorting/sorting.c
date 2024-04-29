@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 16:06:51 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:47:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,20 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 		sort_2_entries(stack_a);
 	else if (stack_size_a == 3)
 		sort_3_entries(stack_a);
-	else if (stack_size_a > 3)
+	else if (stack_size_a == 4)
 	{
-		while (lst_size(*stack_a) > 3)
-		{
-		}
+		push_to_stack_b(stack_a, stack_b);
 		sort_3_entries(stack_a);
+		// voir tri
+	}
+	else if (stack_size >= 5)
+	{
+		push_to_stack_b(stack_a, stack_b);
+		push_to_stack_b(stack_a, stack_b);
+		while (lst_size(stack_a) > 3)
+		{
+			find_target_index(*stack_a, *stack_b);
+
+		}
 	}
 }
