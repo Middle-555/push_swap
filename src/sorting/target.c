@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:55:29 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 17:23:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:51:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	find_target_index(t_stack *src, t_stack *target)
 	while (target)
 	{
 		diff = src->value - target->value;
-		printf("Checking target value: %d, src value: %d, diff: %d\n",
+		ft_printf("Checking target value: %d, src value: %d, diff: %d\n",
 			target->value, src->value, diff);
 		if (diff > 0 && diff < min_diff)
 		{
@@ -45,4 +45,3 @@ int	find_target_index(t_stack *src, t_stack *target)
 	}
 	return (best_target);
 }
-
