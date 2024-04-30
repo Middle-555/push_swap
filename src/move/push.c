@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:50:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 14:50:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:45:37 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	push(t_stack **actual_stack, t_stack **dest_stack)
 void	push_to_stack_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
+	recalculate_index(*stack_a);
+	recalculate_index(*stack_b);
 	ft_printf("pa\n");
 	return ;
 }
@@ -59,6 +61,8 @@ void	push_to_stack_a(t_stack **stack_a, t_stack **stack_b)
 void	push_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
+	recalculate_index(*stack_a);
+	recalculate_index(*stack_b);
 	ft_printf("pb\n");
 	return ;
 }

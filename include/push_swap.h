@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 17:19:59 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:22:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 {
 	struct s_stack	*next;
 	struct s_stack	*target;
-	int				median;
 	int				index;
 	int				value;
 	int				cost;
@@ -98,12 +97,22 @@ void				sort_2_entries(t_stack **stack_a);
 void				sort_3_entries(t_stack **stack_a);
 
 // -> algo_utils.c
-int					find_index(t_stack **stack, int value);
+int					find_index(t_stack *stack, int value);
+int					recalculate_index(t_stack *stack);
 
 // -> algo.c
+void				sorting(t_stack **stack_a, t_stack **stack_b);
 
+// -> cost_utils.c
+int					absolute_min(int a, int b);
+int					absolute_max(int a, int b);
+int					absolute_val(int n);
+int					min(int a, int b);
+int					max(int a, int b);
 // -> cost.c
-
+t_rotation			rotate_cost(t_stack **stack_a, t_stack **stack_b, int ind_a,
+						int ind_b);
+int					total_move(t_rotation nbr_rot);				
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
 t_stack				*find_lowest_node(t_stack **stack);
@@ -113,7 +122,7 @@ int					check_lst_sorted(t_stack **stack);
 void				entries_handler(t_stack **stack_a, t_stack **stack_b);
 
 // -> target.c
-int					find_target_index(t_stack *src, t_stack *target);
+int					find_target_index(t_stack *src, t_stack *dst);
 // utils
 
 // -> utils.c

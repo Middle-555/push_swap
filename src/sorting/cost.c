@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:02:44 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 19:53:54 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:32:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,59 @@
  * @return t_rotation*
  */
 
-t_rotation	*rotate_cost(t_stack **stack_a, t_stack **stack_b, int ind_a,
+t_rotation	rotate_cost(t_stack **stack_a, t_stack **stack_b, int ind_a,
 		int ind_b)
 {
-	t_rotation	*nbr_rot;
-	int			size_a;
-	int			size_b;
-	int			ra;
-	int			rb;
+	t_rotation	nbr_rot;
+	int			nb_move;
+	int			rra;
+	int			rrb;
 
-	nbr_rot = malloc(sizeof(t_rotation));
-	if (!nbr_rot)
-		return (NULL);
-	size_a = stack_size(*stack_a) - 1;
-	size_b = stack_size(*stack_b) - 1;
-	ra = ind_a;
-	rb = ind_b;
-	if (ra <= size_a - ra)
-		nbr_rot->rot_a = ra;
-	else
-		nbr_rot->rot_a = ra - size_a - 1;
-	if (rb <= size_b - rb)
-		nbr_rot->rot_b = rb;
-	else
-		nbr_rot->rot_b = rb - size_b - 1;
+	rra = -((stack_size(stack_a) - ind_a) + 1);
+	rrb = -((stack_size(stack_b) - ind_b) + 1);
+	nbr_rot.rot_a = absolute_min(ind_a, rra);
+	nbr_rot.rot_b = absolute_min(ind_b, rrb);
+	nb_move = total_move(nbr_rot);
+	if (nb_move > max(ind_a, ind_b))
+	{
+		nb_move = max(ind_a, ind_b);
+		nbr_rot.rot_a = ind_a;
+		nbr_rot.rot_b = ind_b;
+	}
+	else if (nb_move > absolute_max(rra, rrb))
+	{
+		nb_move = absolute_max(rra, rrb);
+		nbr_rot.rot_a = rra;
+		nbr_rot.rot_b = rrb;
+	}
 	return (nbr_rot);
+}
+
+int	total_move(t_rotation nbr_rot)
+{
+	if (nbr_rot.rot_a > 0 && nbr_rot.rot_b > 0)
+		return (max(nbr_rot.rot_a, nbr_rot.rot_b));
+	else if (nbr_rot.rot_a < 0 && nbr_rot.rot_b < 0)
+		return (absolute_max(nbr_rot.rot_a, nbr_rot.rot_b));
+	else
+		return (absolute_val(nbr_rot.rot_a) + absolute_val(nbr_rot.rot_b));
+}
+
+void	move_to_push(t_rotation nbr_rot, t_stack **stack_a, t_stack **stack_b)
+{
+	int	min_val;
+	int	max_val;
+	int	i;
+
+	i = 0;
+	min_val = absolute_min(nbr_rot.rot_a, nbr_rot.rot_a);
+	max_val = absolute_max(nbr_rot.rot_a, nbr_rot.rot_b);
+	while (i <= max_val)
+	{
+		while(i <= min_val)
+		{
+			rr_both_stack(*stack_a, *stack_b);
+			i++;
+		}
+	}
 }

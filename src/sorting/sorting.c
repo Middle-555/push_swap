@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 18:47:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:15:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * @param stack
  */
-
+/*
 void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 {
 	int	stack_size_a;
@@ -45,3 +45,4 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 		}
 	}
 }
+*/

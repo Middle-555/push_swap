@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 15:58:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:08:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	print_stack_and_targets(t_stack *stack)
 		{
 			target_value = stack->target->value;
 		}
-		printf("Value: %d, Target: %d\n", stack->value, target_value);
+		ft_printf("Value: %d, Target: %d\n", stack->value, target_value);
 		stack = stack->next;
 	}
 }
@@ -69,10 +69,10 @@ void	print_stack_costs(t_stack *stack)
 	int	index;
 
 	index = 0;
-	printf("Cost details for each element in the stack:\n");
+	ft_printf("Cost details for each element in the stack:\n");
 	while (stack != NULL)
 	{
-		printf("Element %d: value = %d, cost = %d\n", index, stack->value,
+		ft_printf("Element %d: value = %d, cost = %d\n", index, stack->value,
 			stack->cost);
 		stack = stack->next;
 		index++;
@@ -81,18 +81,20 @@ void	print_stack_costs(t_stack *stack)
 
 void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	printf("Stack A\t\tStack B\n");
-	printf("-------\t\t-------\n");
+	ft_printf("Stack A\t\tStack B\n");
+	ft_printf("-------\t\t-------\n");
 	while (stack_a != NULL || stack_b != NULL)
 	{
 		if (stack_a != NULL)
-			printf("%d\t\t", stack_a->value);
+			ft_printf("%d [%d]\t", stack_a->value, stack_a->index);
 		else
-			printf("\t\t");
+			ft_printf("\t\t");
+
 		if (stack_b != NULL)
-			printf("%d\n", stack_b->value);
+			ft_printf("%d [%d]\n", stack_b->value, stack_b->index);
 		else
-			printf("\n");
+			ft_printf("\n");
+
 		if (stack_a != NULL)
 			stack_a = stack_a->next;
 		if (stack_b != NULL)

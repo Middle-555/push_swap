@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 18:00:23 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:22:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 void	sorting(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*index_a;
-	int		index_b;
+	t_stack		*current_a;
+	int			index_a;
+	int			index_b;
+	t_rotation	rot_cost;
+	t_rotation	low_cost;
 
-
-	index_a = *stack_a;
-	while (index_a)
+	current_a = *stack_a;
+	index_a = 0;
+	index_b = find_target_index(current_a, *stack_b);
+	low_cost = rotate_cost(stack_a, stack_b, index_a, index_b);
+	while (current_a)
 	{
-		index_b = find_target_index(index_a, *stack_b);
-		
-		index_a = index_a->next;
+		index_b = find_target_index(current_a, *stack_b);
+		rot_cost = rotate_cost(stack_a, stack_b, index_a, index_b);
+		if (total_move(rot_cost) < total_move(low_cost))
+			low_cost = rot_cost;
+		current_a = current_a->next;
+		index_a++;
+		ft_printf("CECI EST UNE SEPARTION \n \n");
 	}
-
 }

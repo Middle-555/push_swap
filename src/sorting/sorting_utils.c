@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 17:11:30 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:59:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,4 @@ int	check_lst_sorted(t_stack **stack)
 		current = current->next;
 	}
 	return (1);
-}
-
-/**
- * @brief Sets the median value of the stack based on its size.
- *
- * @param stack Pointer to the head of the stack.
- */
-
-void	find_median(t_stack **stack)
-{
-	(*stack)->median = (stack_size(stack) / 2);
 }

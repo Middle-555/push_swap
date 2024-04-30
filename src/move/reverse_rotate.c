@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:58:54 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/26 14:49:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:45:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	reverse_rotate(t_stack **stack)
 void	rr_stack_a(t_stack **stack_a)
 {
 	reverse_rotate(stack_a);
+	recalculate_index(*stack_a);
 	ft_printf("rra\n");
 	return ;
 }
@@ -59,6 +60,7 @@ void	rr_stack_a(t_stack **stack_a)
 void	rr_stack_b(t_stack **stack_b)
 {
 	reverse_rotate(stack_b);
+	recalculate_index(*stack_b);
 	ft_printf("rrb\n");
 	return ;
 }
@@ -74,6 +76,8 @@ void	rr_both_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
+	recalculate_index(*stack_a);
+	recalculate_index(*stack_b);
 	ft_printf("rrr\n");
 	return ;
 }

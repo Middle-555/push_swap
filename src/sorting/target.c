@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   target.c                                           :+:      :+:    :+:   */
+/*   dst.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:55:29 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 18:51:55 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/29 23:37:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief 
- * 
- * @param src 
- * @param target 
- * @return int 
+ * @brief
+ *
+ * @param src
+ * @param dst
+ * @return int
  */
 
-int	find_target_index(t_stack *src, t_stack *target)
+int	find_target_index(t_stack *src, t_stack *dst)
 {
-	int	min_diff;
-	int	diff;
-	int	best_target;
+	int		min_diff;
+	int		diff;
+	int		best_dst;
 
 	min_diff = __INT_MAX__;
-	if (src->value > find_highest_node(target)->value)
-		return (find_index(&target, find_highest_node(target)->value));
-	else if (src->value < find_lowest_node(target)->value)
-		return (find_index(&target, find_highest_node(target)->value));
-	while (target)
+	best_dst = dst->index;
+
+	if (src->value > find_highest_node(&dst)->value)
+		return (find_highest_node(&dst)->index);
+	else if (src->value < find_lowest_node(&dst)->value)
+		return (find_highest_node(&dst)->index);
+	while (dst)
 	{
-		diff = src->value - target->value;
-		ft_printf("Checking target value: %d, src value: %d, diff: %d\n",
-			target->value, src->value, diff);
+		diff = src->value - dst->value;
 		if (diff > 0 && diff < min_diff)
 		{
 			min_diff = diff;
-			best_target = target->index;
+			best_dst = dst->index;
 		}
-		target = target->next;
+		dst = dst->next;
 	}
-	return (best_target);
+	return (best_dst);
 }

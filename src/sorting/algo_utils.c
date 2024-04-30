@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/29 17:21:47 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:29:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,16 @@ int	find_index(t_stack *stack, int value)
 	return (-1);
 }
 
-int	max(int a, int b)
+int	recalculate_index(t_stack *stack)
 {
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
+	int	index;
 
-int	min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	else
-		return (b);
+	index = 0;
+	while (stack)
+	{
+		stack->index = index;
+		index++;
+		stack = stack->next;
+	}
+	return (index);
 }
