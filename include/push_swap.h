@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 15:22:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 21:15:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,13 @@ int					max(int a, int b);
 // -> cost.c
 t_rotation			rotate_cost(t_stack **stack_a, t_stack **stack_b, int ind_a,
 						int ind_b);
-int					total_move(t_rotation nbr_rot);				
+int					total_move(t_rotation nbr_rot);
+void				exec_positive_number(t_rotation nbr_rot, t_stack **stack_a,
+						t_stack **stack_b);
+void				exec_negative_number(t_rotation nbr_rot, t_stack **stack_a,
+						t_stack **stack_b);
+void				exec_move(t_rotation nbr_rot, t_stack **stack_a,
+						t_stack **stack_b);
 // -> sorting_utils.c
 t_stack				*find_highest_node(t_stack **stack);
 t_stack				*find_lowest_node(t_stack **stack);

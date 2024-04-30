@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:02:44 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 15:32:05 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/04/30 21:14:38 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,74 @@ int	total_move(t_rotation nbr_rot)
 		return (absolute_val(nbr_rot.rot_a) + absolute_val(nbr_rot.rot_b));
 }
 
-void	move_to_push(t_rotation nbr_rot, t_stack **stack_a, t_stack **stack_b)
+void	exec_positive_number(t_rotation nbr_rot, t_stack **stack_a,
+		t_stack **stack_b)
 {
-	int	min_val;
-	int	max_val;
-	int	i;
-
-	i = 0;
-	min_val = absolute_min(nbr_rot.rot_a, nbr_rot.rot_a);
-	max_val = absolute_max(nbr_rot.rot_a, nbr_rot.rot_b);
-	while (i <= max_val)
+	while (nbr_rot.rot_a > 0 && nbr_rot.rot_b > 0)
 	{
-		while(i <= min_val)
+		rr_both_stack(stack_a, stack_b);
+		nbr_rot.rot_a--;
+		nbr_rot.rot_b--;
+	}
+	if (nbr_rot.rot_a > 0)
+	{
+		while (nbr_rot.rot_a > 0)
 		{
-			rr_both_stack(*stack_a, *stack_b);
-			i++;
+			rotate_stack_a(stack_a);
+			nbr_rot.rot_a--;
 		}
+	}
+	else if (nbr_rot.rot_b > 0)
+	{
+		while (nbr_rot.rot_b > 0)
+		{
+			rotate_stack_b(stack_b);
+			nbr_rot.rot_b--;
+		}
+	}
+}
+
+void	exec_negative_number(t_rotation nbr_rot, t_stack **stack_a,
+		t_stack **stack_b)
+{
+	while (nbr_rot.rot_a < 0 && nbr_rot.rot_b < 0)
+	{
+		rr_both_stack(stack_a, stack_b);
+		nbr_rot.rot_a++;
+		nbr_rot.rot_b++;
+	}
+	if (nbr_rot.rot_a < 0)
+	{
+		while (nbr_rot.rot_a < 0)
+		{
+			rotate_stack_a(stack_a);
+			nbr_rot.rot_a++;
+		}
+	}
+	else if (nbr_rot.rot_b < 0)
+	{
+		while (nbr_rot.rot_b < 0)
+		{
+			rotate_stack_b(stack_b);
+			nbr_rot.rot_b++;
+		}
+	}
+}
+
+void	exec_move(t_rotation nbr_rot, t_stack **stack_a, t_stack **stack_b)
+{
+	if (nbr_rot.rot_a > 0 && nbr_rot.rot_b > 0)
+		exec_positive_number(nbr_rot, stack_a, stack_b);
+	else if (nbr_rot.rot_a < 0 && nbr_rot.rot_b < 0)
+		exec_negative_number(nbr_rot, stack_a, stack_b);
+	else if (nbr_rot.rot_a < 0 && nbr_rot.rot_b >= 0)
+	{
+		exec_positive_number(nbr_rot, stack_a, stack_b);
+		exec_negative_number(nbr_rot, stack_a, stack_b);
+	}
+	else if (nbr_rot.rot_a >= 0 && nbr_rot.rot_b < 0)
+	{
+		exec_positive_number(nbr_rot, stack_a, stack_b);
+		exec_negative_number(nbr_rot, stack_a, stack_b);
 	}
 }
