@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:28:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/27 16:48:48 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:40:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sort_3_entries(t_stack **stack_a)
 {
 	t_stack	*highest;
 
-	highest = find_highest_node(stack_a);
+	highest = find_highest_node(*stack_a);
 	if (*stack_a == highest)
 		rotate_stack_a(stack_a);
 	else if ((*stack_a)->next == highest)

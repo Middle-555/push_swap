@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:02:44 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 21:14:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:23:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ t_rotation	rotate_cost(t_stack **stack_a, t_stack **stack_b, int ind_a,
 	int			rra;
 	int			rrb;
 
-	rra = -((stack_size(stack_a) - ind_a) + 1);
-	rrb = -((stack_size(stack_b) - ind_b) + 1);
+	rra = -((stack_size(*stack_a) - ind_a));
+	rrb = -((stack_size(*stack_b) - ind_b));
 	nbr_rot.rot_a = absolute_min(ind_a, rra);
 	nbr_rot.rot_b = absolute_min(ind_b, rrb);
 	nb_move = total_move(nbr_rot);
@@ -120,12 +120,7 @@ void	exec_move(t_rotation nbr_rot, t_stack **stack_a, t_stack **stack_b)
 		exec_positive_number(nbr_rot, stack_a, stack_b);
 	else if (nbr_rot.rot_a < 0 && nbr_rot.rot_b < 0)
 		exec_negative_number(nbr_rot, stack_a, stack_b);
-	else if (nbr_rot.rot_a < 0 && nbr_rot.rot_b >= 0)
-	{
-		exec_positive_number(nbr_rot, stack_a, stack_b);
-		exec_negative_number(nbr_rot, stack_a, stack_b);
-	}
-	else if (nbr_rot.rot_a >= 0 && nbr_rot.rot_b < 0)
+	else
 	{
 		exec_positive_number(nbr_rot, stack_a, stack_b);
 		exec_negative_number(nbr_rot, stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 15:08:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:22:16 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,21 @@ void	print_stack_costs(t_stack *stack)
 
 void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 {
+	recalculate_index(stack_a);
+	recalculate_index(stack_b);
 	ft_printf("Stack A\t\tStack B\n");
 	ft_printf("-------\t\t-------\n");
 	while (stack_a != NULL || stack_b != NULL)
 	{
 		if (stack_a != NULL)
-			ft_printf("%d [%d]\t", stack_a->value, stack_a->index);
+			printf("%d [%d]\t", stack_a->value, stack_a->index);
 		else
-			ft_printf("\t\t");
+			printf("\t\t");
 
 		if (stack_b != NULL)
-			ft_printf("%d [%d]\n", stack_b->value, stack_b->index);
+			printf("%d [%d]\n", stack_b->value, stack_b->index);
 		else
-			ft_printf("\n");
+			printf("\n");
 
 		if (stack_a != NULL)
 			stack_a = stack_a->next;

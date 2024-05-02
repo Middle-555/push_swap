@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 21:15:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:40:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,12 +120,12 @@ void				exec_negative_number(t_rotation nbr_rot, t_stack **stack_a,
 void				exec_move(t_rotation nbr_rot, t_stack **stack_a,
 						t_stack **stack_b);
 // -> sorting_utils.c
-t_stack				*find_highest_node(t_stack **stack);
+t_stack				*find_highest_node(t_stack *stack);
 t_stack				*find_lowest_node(t_stack **stack);
 int					check_lst_sorted(t_stack **stack);
 
 // -> sorting.c
-void				entries_handler(t_stack **stack_a, t_stack **stack_b);
+void	entries_handler(t_stack **stack_a, t_stack **stack_b);
 
 // -> target.c
 int					find_target_index(t_stack *src, t_stack *dst);
@@ -146,7 +146,7 @@ int					lst_size(t_stack *lst);
 // -> utils2_linked_list.c
 t_stack				*creade_new_node(int value);
 void				add_on_top(t_stack **stack, t_stack *new_node);
-int					stack_size(t_stack **stack);
+int					stack_size(t_stack *stack);
 
 // -> test.c
 void				print_tab(char **tab);

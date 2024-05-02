@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 13:59:53 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:40:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,25 @@
  * Returns NULL if the stack is empty.
  */
 
-t_stack	*find_highest_node(t_stack **stack)
+t_stack	*find_highest_node(t_stack *stack)
 {
 	t_stack	*highest;
-	t_stack	*temp;
 	long	highest_value;
 
 	highest_value = LONG_MIN;
-	highest = *stack;
-	temp = *stack;
-	while (temp != NULL)
+	highest = stack;
+	while (stack != NULL)
 	{
-		if (highest_value < temp->value)
+		if (highest_value < stack->value)
 		{
-			highest_value = temp->value;
-			highest = temp;
+			highest_value = stack->value;
+			highest = stack;
 		}
-		temp = temp->next;
+		stack = stack->next;
 	}
 	return (highest);
 }
+
 
 /**
  * @brief Finds the node with the lowest value in the stack.
