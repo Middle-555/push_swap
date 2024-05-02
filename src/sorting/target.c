@@ -27,25 +27,18 @@ int	find_target_index(t_stack *src, t_stack *dst)
 	int		best_dst;
 
 	min_diff = __INT_MAX__;
-	best_dst = -1;
+	best_dst = dst->index;
 
-	printf("src value : %d \n", src->value);
-	printf("dst value : %d \n", dst->value);
 	recalculate_index(src);
 	recalculate_index(dst);
 	if (src->value > find_highest_node(dst)->value)
-	{
-		printf("HIGHEST IN THE ROOM  : %d\n", find_highest_node(dst)->value);
-		printf("Highest index in the room ? : %d\n", find_highest_node(dst)->index);
 		return (find_highest_node(dst)->index);
-	}
 	else if (src->value < find_lowest_node(&dst)->value)
 		return (find_highest_node(dst)->index);
 	while (dst)
 	{
 
 		diff = src->value - dst->value;
-		printf("DIFF : %d \n", diff);
 		if (diff > 0 && diff < min_diff)
 		{
 			min_diff = diff;

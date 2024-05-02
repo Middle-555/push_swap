@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:02:44 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/02 18:23:55 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:30:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	exec_positive_number(t_rotation nbr_rot, t_stack **stack_a,
 {
 	while (nbr_rot.rot_a > 0 && nbr_rot.rot_b > 0)
 	{
-		rr_both_stack(stack_a, stack_b);
+		rotate_both_stack(stack_a, stack_b);
 		nbr_rot.rot_a--;
 		nbr_rot.rot_b--;
 	}
@@ -100,7 +100,7 @@ void	exec_negative_number(t_rotation nbr_rot, t_stack **stack_a,
 	{
 		while (nbr_rot.rot_a < 0)
 		{
-			rotate_stack_a(stack_a);
+			rr_stack_a(stack_a);
 			nbr_rot.rot_a++;
 		}
 	}
@@ -108,7 +108,7 @@ void	exec_negative_number(t_rotation nbr_rot, t_stack **stack_a,
 	{
 		while (nbr_rot.rot_b < 0)
 		{
-			rotate_stack_b(stack_b);
+			rr_stack_b(stack_b);
 			nbr_rot.rot_b++;
 		}
 	}
