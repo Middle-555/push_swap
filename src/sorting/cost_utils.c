@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:04:20 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/02 23:09:39 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:47:41 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	absolute_min(int a, int b)
 		return (a);
 	else
 		return (b);
-
 }
 
 int	absolute_max(int a, int b)

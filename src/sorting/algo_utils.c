@@ -6,12 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/04/30 13:29:53 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:48:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
 
 int	find_index(t_stack *stack, int value)
 {
@@ -21,9 +20,7 @@ int	find_index(t_stack *stack, int value)
 	while (stack)
 	{
 		if (stack->value == value)
-		{
 			return (index);
-		}
 		stack = stack->next;
 		index++;
 	}

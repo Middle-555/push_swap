@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/02 21:40:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:48:47 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_stack	*find_highest_node(t_stack *stack)
 	}
 	return (highest);
 }
-
 
 /**
  * @brief Finds the node with the lowest value in the stack.

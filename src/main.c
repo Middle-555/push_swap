@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/02 23:31:05 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:47:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 	entries_handler(&data.stack_a, &data.stack_b);
 	ft_printf("Pile B remplie\n");
 	print_stacks(data.stack_a, data.stack_b);
-	// Libération de la mémoire et fin du programme
 	free_both_stack(&data);
 	ft_printf("Ressources libérées, programme terminé\n");
 	return (0);
