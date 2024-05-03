@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/03 17:17:48 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:39:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ int					recalculate_index(t_stack *stack);
 
 // -> algo.c
 void				sorting(t_stack **stack_a, t_stack **stack_b);
+void	sort_5_entries(t_stack **stack_a, t_stack **stack_b);
 
 // -> cost_utils.c
 int					absolute_min(int a, int b);

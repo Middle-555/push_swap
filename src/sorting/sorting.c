@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/03 17:16:42 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:39:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 				rotate_stack_a(stack_a);
 		}
 	}
-	else if (stack_size_a >= 5)
+	else if (stack_size_a == 5)
+		sort_5_entries(stack_a, stack_b);
+	else if (stack_size_a > 5)
 	{
 		push_to_stack_b(stack_a, stack_b);
 		push_to_stack_b(stack_a, stack_b);

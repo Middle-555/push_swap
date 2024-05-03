@@ -6,11 +6,24 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/03 17:18:04 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:41:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+void	sort_5_entries(t_stack **stack_a, t_stack **stack_b)
+{
+	push_to_stack_b(stack_a, stack_b);
+	push_to_stack_b(stack_a, stack_b);
+	sort_3_entries(stack_a);
+	push_to_stack_a(stack_a, stack_b);
+	push_to_stack_a(stack_a, stack_b);
+	if (!(check_lst_sorted(stack_a)))
+		while (*stack_a != find_lowest_node(stack_a))
+			rotate_stack_a(stack_a);
+	print_stacks(*stack_a, *stack_b);
+}
 
 void	sorting(t_stack **stack_a, t_stack **stack_b)
 {
