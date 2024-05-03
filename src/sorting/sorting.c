@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/03 15:59:02 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:16:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 	{
 		push_to_stack_b(stack_a, stack_b);
 		sort_3_entries(stack_a);
+		push_to_stack_a(stack_a, stack_b);
+		while (*stack_a != find_lowest_node(stack_a))
+		{
+			if (find_lowest_node(stack_a)->index > stack_size(*stack_a))
+				rr_stack_a(stack_a);
+			else
+				rotate_stack_a(stack_a);
+		}
 	}
 	else if (stack_size_a >= 5)
 	{
@@ -45,10 +53,8 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 			stack_size_a = stack_size(*stack_a);
 		}
 		stack_size_b = stack_size(*stack_b);
-		//print_stacks(*stack_a, *stack_b);
 		while (stack_size_b > 0)
 		{
-			//sorting2(stack_b, stack_a);
 			push_to_stack_a(stack_a, stack_b);
 			stack_size_b = stack_size(*stack_b);
 		}
@@ -59,6 +65,5 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 			else
 				rotate_stack_a(stack_a);
 		}
-		//print_stacks(*stack_a, *stack_b);
 	}
 }

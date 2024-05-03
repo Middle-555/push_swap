@@ -47,31 +47,3 @@ int	find_target_index(t_stack *src, t_stack *dst)
 	}
 	return (best_dst);
 }
-
-int	find_target_in_stack_a(t_stack *src, t_stack *dst)
-{
-	int		max_diff;
-	int		diff;
-	int		best_dst;
-
-	max_diff = INT_MIN;
-	best_dst = dst->index;
-
-	recalculate_index(src);
-	recalculate_index(dst);
-	//if (src->value > find_highest_node(dst)->value)
-	//	return (find_highest_node(dst)->index);
-	//else if (src->value < find_lowest_node(&dst)->value)
-		//return (find_highest_node(dst)->index);
-	while (dst)
-	{
-		diff = dst->value - src-> value;
-		if (diff  < 0 && diff > max_diff)
-		{
-			max_diff = diff;
-			best_dst = dst->index;
-		}
-		dst = dst->next;
-	}
-	return (best_dst);
-}
