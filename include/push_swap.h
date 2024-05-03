@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/02 21:40:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/03 14:35:22 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ int					recalculate_index(t_stack *stack);
 
 // -> algo.c
 void				sorting(t_stack **stack_a, t_stack **stack_b);
+void				sorting2(t_stack **stack_b, t_stack **stack_a);
 
 // -> cost_utils.c
 int					absolute_min(int a, int b);
@@ -129,6 +130,8 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b);
 
 // -> target.c
 int					find_target_index(t_stack *src, t_stack *dst);
+int					find_target_in_stack_a(t_stack *src, t_stack *dst);
+
 // utils
 
 // -> utils.c
@@ -154,9 +157,5 @@ void				lst_print(t_stack *lst);
 void				print_stack_and_targets(t_stack *stack);
 void				print_stack_costs(t_stack *stack);
 void				print_stacks(t_stack *stack_a, t_stack *stack_b);
-
-// test en cours
-int					max(int a, int b);
-int					min(int a, int b);
 
 #endif
