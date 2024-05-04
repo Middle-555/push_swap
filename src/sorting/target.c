@@ -59,10 +59,10 @@ int	find_target_index_in_a(t_stack *src, t_stack *dst)
 
 	recalculate_index(src);
 	recalculate_index(dst);
-	if (src->value > find_highest_node(dst)->value)
-		return (find_highest_node(dst)->index);
-	else if (src->value < find_lowest_node(&dst)->value)
-		return (find_lowest_node(&dst)->index);
+	//if (src->value > find_highest_node(dst)->value)
+	//	return (find_highest_node(dst)->index + 1);
+	//else if (src->value < find_lowest_node(&dst)->value)
+		//return (find_lowest_node(&dst)->index);
 	while (dst)
 	{
 		diff = dst->value - src->value;
