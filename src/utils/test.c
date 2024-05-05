@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/02 17:22:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:33:45 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,14 @@ void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a != NULL || stack_b != NULL)
 	{
 		if (stack_a != NULL)
-			printf("%d [%d]\t", stack_a->value, stack_a->index);
+			ft_printf("%d [%d]\t", stack_a->value, stack_a->index);
 		else
-			printf("\t\t");
+			ft_printf("\t\t");
 
 		if (stack_b != NULL)
-			printf("%d [%d]\n", stack_b->value, stack_b->index);
+			ft_printf("%d [%d]\n", stack_b->value, stack_b->index);
 		else
-			printf("\n");
+			ft_printf("\n");
 
 		if (stack_a != NULL)
 			stack_a = stack_a->next;

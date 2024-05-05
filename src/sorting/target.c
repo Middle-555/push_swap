@@ -48,6 +48,7 @@ int	find_target_index(t_stack *src, t_stack *dst)
 	return (best_dst);
 }
 
+/*
 int	find_target_index_in_a(t_stack *src, t_stack *dst)
 {
 	int	max_diff;
@@ -59,10 +60,6 @@ int	find_target_index_in_a(t_stack *src, t_stack *dst)
 
 	recalculate_index(src);
 	recalculate_index(dst);
-	//if (src->value > find_highest_node(dst)->value)
-	//	return (find_highest_node(dst)->index + 1);
-	//else if (src->value < find_lowest_node(&dst)->value)
-		//return (find_lowest_node(&dst)->index);
 	while (dst)
 	{
 		diff = dst->value - src->value;
@@ -90,3 +87,4 @@ t_rotation	find_best_rotation(t_stack **stack_a, t_stack **stack_b)
 	exec_move(rotation_info, stack_a, stack_b);
 	return (rotation_info);
 }
+*/
