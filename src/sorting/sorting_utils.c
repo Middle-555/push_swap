@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:30:23 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/03 12:14:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:18:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ int	check_lst_sorted(t_stack **stack)
 	while (current->next)
 	{
 		if (current->value > current->next->value)
-			return (0);
+			return (-1);
 		current = current->next;
 	}
-	return (1);
+	return (0);
 }
 

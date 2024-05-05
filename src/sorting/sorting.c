@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/04 09:59:58 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:30:22 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	entries_handler(t_stack **stack_a, t_stack **stack_b)
 		}
 		while (*stack_a != find_lowest_node(stack_a))
 		{
-			if (find_lowest_node(stack_a)->index > stack_size(*stack_a))
+			if (find_lowest_node(stack_a)->index > (stack_size(*stack_a) / 2 + 1))
 				rr_stack_a(stack_a);
 			else
 				rotate_stack_a(stack_a);
