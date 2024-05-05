@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/04 09:59:09 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:45:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,4 @@ void	sorting(t_stack **stack_a, t_stack **stack_b)
 	}
 	exec_move(low_cost, stack_a, stack_b);
 }
+
