@@ -6,11 +6,21 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:45:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 11:46:00 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:20:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief Sorts a stack with exactly four elements.
+ * 
+ * Moves one element to another stack, sorts the remaining three, then
+ * integrates the moved element back into the sorted stack.
+ * 
+ * @param stack_a Main stack to sort.
+ * @param stack_b Auxiliary stack used for temporary storage.
+ */
 
 void	sort_4_entries(t_stack **stack_a, t_stack **stack_b)
 {

@@ -6,17 +6,20 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 12:13:37 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:18:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief 
+ * @brief Sorts a large stack by alternating elements between two stacks.
  * 
- * @param stack_a 
- * @param stack_b 
+ * Handles sorting by moving elements between stack_a and stack_b, sorting
+ * them in stack_b, and then returning them in order to stack_a.
+ * 
+ * @param stack_a Primary stack of elements to be sorted.
+ * @param stack_b Auxiliary stack for temporary storage during sorting.
  */
 
 void	sort_large_stack(t_stack **stack_a, t_stack **stack_b)
@@ -43,9 +46,12 @@ void	sort_large_stack(t_stack **stack_a, t_stack **stack_b)
 }
 
 /**
- * @brief 
+ * @brief Adjusts sorted stack so smallest element is at the top.
  * 
- * @param stack_a 
+ * Rotates elements in stack_a until the smallest element is at the top.
+ * Decides rotation direction based on smallest element's position.
+ * 
+ * @param stack_a Stack to adjust for smallest element at top.
  */
 
 void	final_adjustment(t_stack **stack_a)
@@ -60,10 +66,13 @@ void	final_adjustment(t_stack **stack_a)
 }
 
 /**
- * @brief 
+ * @brief Sorts elements between stacks based on optimal rotation cost.
  * 
- * @param stack_a 
- * @param stack_b 
+ * Iterates through stack_a to evaluate movement costs for each element to
+ * its target position in stack_b. Applies movement with lowest total cost.
+ * 
+ * @param stack_a Primary stack for element movement.
+ * @param stack_b Auxiliary stack for optimal placement.
  */
 
 void	sorting(t_stack **stack_a, t_stack **stack_b)
