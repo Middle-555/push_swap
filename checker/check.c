@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:58:01 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 18:29:17 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 18:31:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	get_instruction(t_stack **stack_a, t_stack **stack_b)
 	printf("0\n");
 	while (instruction && instruction[0] != '\n')
 	{
+		printf("printavant le if \n");
 		if (instruction_check(stack_a, stack_b, instruction))
 		{
 			printf("1\n");
@@ -37,6 +38,7 @@ int	get_instruction(t_stack **stack_a, t_stack **stack_b)
 			printf("3\n");
 			return (-1);
 		}
+		printf("print entre le if \n");
 		if (check_lst_sorted(stack_a) == (-1) && stack_b == NULL)
 		{
 			printf("4\n");
