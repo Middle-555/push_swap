@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/06 15:44:29 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/05/06 15:50:10 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ LIBFT		=	$(LIB_DIR)libraries.a
 
 # The main rule
 all                :	$(NAME)
+bonus		   :	$(CHECKER_NAME)
 
 # The name rule
 $(NAME)            :    $(OBJ) $(LIBFT)
@@ -52,6 +53,12 @@ $(LIBFT)        :    $(LIB_DIR)
 	@echo "\033[0;33mCompiling my libft -> ⏳\033[0m"
 	@make all -sC $<
 	@echo "\033[0;32mLibft successfuly compiled -> ✅\033[0m\n"
+
+
+$(CHECKER_NAME): $(CHECKER_SRC:%.c=$(OBJ_DIR)%.o) $(LIBFT)
+	@echo "\033[0;33mCompiling the checker program -> ⏳\033[0m"
+	@$(CC) $(CHECKER_SRC:%.c=$(OBJ_DIR)%.o) $(LIBFT) -o $@ -I include/
+	@echo "\033[0;32mChecker program successfully compiled -> ✅\033[0m\n"
 
 
 # Create the obj directory
@@ -73,7 +80,7 @@ clean            :
 
 fclean            :    clean
 	@echo "\033[0;31mCleaning program -> 🗑️\033[0m"
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(CHECKER_NAME)
 	@make fclean -sC $(LIB_DIR)
 	@echo "\033[0;32mDone -> ✅\033[0m\n"
 

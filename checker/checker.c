@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:26:09 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 15:43:26 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:54:27 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/checker.h"
+#include "checker.h"
 
 int	main(int argc, char **argv)
 {

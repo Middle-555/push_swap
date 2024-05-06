@@ -6,15 +6,15 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:26:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 15:42:41 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:54:30 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/checker.h"
+#include "checker.h"
 
 void	check_result(t_stack **stack_a)
 {
-	if (check_lst_sorted == 0)
+	if (check_lst_sorted(stack_a) == 0)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
@@ -25,12 +25,12 @@ int	get_instruction(t_stack **stack_a, t_stack **stack_b)
 	char	*instruction;
 
 	instruction = get_next_line(0);
-	while (instruction && instruction[0] != "\n")
+	while (instruction && instruction[0] != '\n')
 	{
-		if (instruction_check(stack_a, stack_b, *instruction))
+		if (instruction_check(stack_a, stack_b, instruction))
 		{
 			free(instruction);
-			ft_prinf("Error\n");
+			ft_printf("Error\n");
 			return (-1);
 		}
 		if (check_lst_sorted(stack_a) == (-1))
@@ -42,6 +42,7 @@ int	get_instruction(t_stack **stack_a, t_stack **stack_b)
 		instruction = get_next_line(0);
 	}
 	free(instruction);
+	return (0);
 }
 
 int	instruction_check(t_stack **stack_a, t_stack **stack_b, char *str)
