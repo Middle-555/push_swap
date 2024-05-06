@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:47:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 15:46:11 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:54:17 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int				main(int argc, char **argv);
 void			check_result(t_stack **stack_a);
 int				instruction_check(t_stack **stack_a,
 					t_stack **stack_b, char *str);
-int				get_instruction(t_stack **stack_a, t_stack **stack_b);
+int				instruction_check_rotate(t_stack **stack_a,
+					t_stack **stack_b, char *str);
+int				get_instruction(t_stack **stack_a,
+					t_stack **stack_b);
 
 #endif

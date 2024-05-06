@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/06 17:22:25 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/06 17:40:12 by kpourcel         ###   ########.fr        #
+#    Created: 2024/05/06 17:57:48 by kpourcel          #+#    #+#              #
+#    Updated: 2024/05/06 18:03:50 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Name of the program
+# Name of the program 
 NAME    =    checker
 # Flags
 CC		=	cc

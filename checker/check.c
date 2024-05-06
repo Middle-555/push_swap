@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:26:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 17:35:58 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/05/06 17:58:01 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/05/06 17:58:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,43 @@ int	get_instruction(t_stack **stack_a, t_stack **stack_b)
 int	instruction_check(t_stack **stack_a, t_stack **stack_b, char *str)
 {
 	if (ft_strcmp(str, "pa\n") == 0)
-		push_to_stack_a(stack_a, stack_b);
+		push(stack_a, stack_b);
 	else if (ft_strcmp(str, "pb\n") == 0)
-		push_to_stack_b(stack_a, stack_b);
+		push(stack_b, stack_a);
 	else if (ft_strcmp(str, "sa\n") == 0)
-		swap_stack_a(stack_a);
+		swap(stack_a);
 	else if (ft_strcmp(str, "sb\n") == 0)
-		swap_stack_b(stack_b);
+		swap(stack_b);
 	else if ((ft_strcmp(str, "ss\n") == 0))
-		swap_both_stack(stack_a, stack_b);
-	else if (ft_strcmp(str, "ra\n") == 0)
-		rotate_stack_a(stack_a);
+	{
+		swap(stack_a);
+		swap(stack_b);
+	}
+	else if (instruction_check_rotate(stack_a, stack_b, str) == -1)
+		return (-1);
+	return (0);
+}
+
+int	instruction_check_rotate(t_stack **stack_a, t_stack **stack_b, char *str)
+{
+	if (ft_strcmp(str, "ra\n") == 0)
+		rotate(stack_a);
 	else if (ft_strcmp(str, "rb\n") == 0)
-		rotate_stack_b(stack_b);
+		rotate(stack_b);
 	else if (ft_strcmp(str, "rr\n") == 0)
-		rotate_both_stack(stack_a, stack_b);
+	{
+		rotate(stack_a);
+		rotate(stack_b);
+	}
 	else if (ft_strcmp(str, "rra\n") == 0)
-		rr_stack_a(stack_a);
+		reverse_rotate(stack_a);
 	else if (ft_strcmp(str, "rrb\n") == 0)
-		rr_stack_b(stack_b);
+		reverse_rotate(stack_b);
 	else if (ft_strcmp(str, "rrr\n") == 0)
-		rr_both_stack(stack_a, stack_b);
+	{
+		reverse_rotate(stack_a);
+		reverse_rotate(stack_b);
+	}
 	else
 		return (-1);
 	return (0);
