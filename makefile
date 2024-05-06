@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/06 17:59:53 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/05/06 21:25:15 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,11 @@ $(OBJ_DIR)%.o    :    %.c | $(OBJ_DIR)
 	@echo "\033[0;33mCompiling project src -> ⏳\033[0m"
 	@$(CC) $(CFLAGS) -c $< -o $@ -I include/
 	@echo "\033[0;32mSrc's project successfuly compiled -> ✅\033[0m\n"
+
+# Bonus rule for compiling the checker
+bonus:
+	@make -C checker/
+
 
 # Clean, fclean and re rules
 clean            :

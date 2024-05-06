@@ -6,33 +6,35 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 20:57:24 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 21:04:39 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:13:47 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/get_next_line.h"
 
-/* readNextLine: Lire la ligne suivante d'un fichier et gérer un buffer statique */
-char *get_next_line(int fd) 
+/* readNextLine: Lire la ligne suivante d'un fichier 
+et gérer un buffer statique */
+char	*get_next_line(int fd)
 {
-    static char *buf[4096];
-    char *line;
+	static char	*buf[4096];
+	char		*line;
 
-    if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0) 
-    {
-        free(buf[fd]);
-        buf[fd] = NULL;
-        return NULL;
-    }
-    buf[fd] = add_to_buffer(fd, buf[fd]);
-    if (!buf[fd])
-        return NULL;
-    line = extract_line(buf[fd]);
-    buf[fd] = clear_buffer(buf[fd]);
-    return line;
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		free(buf[fd]);
+		buf[fd] = NULL;
+		return (NULL);
+	}
+	buf[fd] = add_to_buffer(fd, buf[fd]);
+	if (!buf[fd])
+		return (NULL);
+	line = extract_line(buf[fd]);
+	buf[fd] = clear_buffer(buf[fd]);
+	return (line);
 }
 
-/* add_to_buffer: Ajoute les données lues au buffer jusqu'à rencontrer un '\n' */
+/* add_to_buffer: Ajoute les données lues au buffer
+ jusqu'à rencontrer un '\n' */
 char	*add_to_buffer(int fd, char *buf)
 {
 	char	*temp_buf;
@@ -82,7 +84,8 @@ char	*extract_line(char *buf)
 	return (line);
 }
 
-/* create_new_buffer: Crée un nouveau buffer à partir de la position après '\n' */
+/* create_new_buffer: Crée un nouveau buffer à 
+partir de la position après '\n' */
 char	*create_new_buffer(char *buf, int i)
 {
 	int		j;
@@ -102,7 +105,8 @@ char	*create_new_buffer(char *buf, int i)
 	return (new_buf);
 }
 
-/* clear_buffer: Nettoie le buffer en créant un nouveau à partir du dernier '\n' trouvé */
+/* clear_buffer: Nettoie le buffer en créant un nouveau
+ à partir du dernier '\n' trouvé */
 char	*clear_buffer(char *buf)
 {
 	int		i;

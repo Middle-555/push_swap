@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 17:57:48 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/06 18:03:50 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/05/06 21:24:21 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,9 @@ all                :	$(NAME)
 
 # The name rule
 $(NAME)            :    $(OBJ) $(LIBFT)
-	@echo "\033[0;33mCompiling the whole project -> ⏳\033[0m"
+	@echo "\033[0;33mCompiling the checker -> ⏳\033[0m"
 	@$(CC) $(OBJ) $(LIBFT) -o $@ -I include/
-	@echo "\033[0;32mProject successfuly compiled -> ✅\033[0m\n"
+	@echo "\033[0;32mChecker successfuly compiled -> ✅\033[0m\n"
 
 # The libft rule
 $(LIBFT)        :    $(LIB_DIR)

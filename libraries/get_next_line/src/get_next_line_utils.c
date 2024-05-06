@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 20:59:44 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 21:04:44 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:11:44 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*find_char(const char *str, int char_to_find)
 /* string_length: Calcule la longueur d'une chaîne de caractères */
 size_t	string_length(const char *str)
 {
-	size_t length;
+	size_t	length;
 
 	if (!str)
 		return (0);
@@ -37,7 +37,8 @@ size_t	string_length(const char *str)
 	return (length);
 }
 
-/* clear_memory: Initialise les n premiers octets du bloc mémoire pointé par ptr à zéro */
+/* clear_memory: Initialise les n premiers octets du bloc 
+mémoire pointé par ptr à zéro */
 void	clear_memory(void *ptr, size_t n)
 {
 	size_t	i;
@@ -52,7 +53,8 @@ void	clear_memory(void *ptr, size_t n)
 	}
 }
 
-/* allocate_memory: Alloue de la mémoire tout en initialisant le contenu à zéro */
+/* allocate_memory: Alloue de la mémoire tout en initialisant
+ le contenu à zéro */
 void	*allocate_memory(size_t num_items, size_t size)
 {
 	void	*ptr;
@@ -67,8 +69,8 @@ void	*allocate_memory(size_t num_items, size_t size)
 /* join_strings: Concatène deux chaînes de caractères en une nouvelle chaîne */
 char	*join_strings(char *str1, char *str2)
 {
-	int	i;
-	int	k;
+	int		i;
+	int		k;
 	char	*result;
 
 	if (!str1)
@@ -78,7 +80,8 @@ char	*join_strings(char *str1, char *str2)
 	}
 	if (!str2 || !str1)
 		return (NULL);
-	result = malloc(sizeof(char) * ((string_length(str1) + string_length(str2)) + 1));
+	result = malloc(sizeof(char) * ((string_length(str1)
+					+ string_length(str2)) + 1));
 	if (!result)
 		return (NULL);
 	i = -1;
