@@ -6,22 +6,23 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/05 17:42:43 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/05/06 15:23:08 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the program
 NAME    =    push_swap
-
+CHECKER_NAME = checker
 # Flags
 CC		=	cc
 CFLAGS		=	-Wall -Werror -Wextra -g
 
 # Directories
-VPATH		=	src  src/error_handling src/move src/sorting src/utils 
+VPATH		=	src  src/error_handling src/move src/sorting src/utils checker
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 LIB_DIR		=	libraries/
+CHECKER_DIR	=	checker/
 
 # .c and .o files
 ERROR		= 	error_utils.c error.c free.c check_number.c
@@ -30,6 +31,7 @@ MOVE		=	push.c reverse_rotate.c rotate.c swap.c
 SORTING		=	sorting_utils.c 3_entries.c 2_entries.c sorting.c \
 				algo.c algo_utils.c target.c cost.c cost_utils.c \
 					4_entries.c 5_entries.c
+CHECKER_SRC	=	che
 SRC		=	main.c $(ERROR) $(UTILS) $(MOVE) $(SORTING)
 OBJ		=	$(SRC:%.c=$(OBJ_DIR)%.o)
 

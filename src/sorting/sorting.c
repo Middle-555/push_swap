@@ -6,16 +6,20 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:38:25 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/05 17:50:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:42:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 /**
- * @brief
+ * @brief Handles sorting of stacks based on their size.
+ * 
+ * Depending on the number of elements, it delegates the sorting task to the 
+ * appropriate function to manage stacks of 2 to 5+ elements.
  *
- * @param stack
+ * @param stack_a Main stack to be sorted.
+ * @param stack_b Auxiliary stack for operations.
  */
 
 void	entries_handler(t_stack **stack_a, t_stack **stack_b)

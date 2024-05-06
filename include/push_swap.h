@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 12:27:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:48:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,9 @@ int					recalculate_index(t_stack *stack);
 
 // -> algo.c
 void				sorting(t_stack **stack_a, t_stack **stack_b);
-void				sort_5_entries(t_stack **stack_a, t_stack **stack_b);
-void				sort_4_entries(t_stack **stack_a, t_stack **stack_b);
-t_rotation			find_best_rotation(t_stack **stack_a, t_stack **stack_b);
+void	sort_5_entries(t_stack **stack_a, t_stack **stack_b);
+void	sort_4_entries(t_stack **stack_a, t_stack **stack_b);
+t_rotation	find_best_rotation(t_stack **stack_a, t_stack **stack_b);
 
 // -> cost_utils.c
 int					absolute_min(int a, int b);
@@ -159,9 +159,9 @@ void				lst_print(t_stack *lst);
 void				print_stack_and_targets(t_stack *stack);
 void				print_stack_costs(t_stack *stack);
 void				print_stacks(t_stack *stack_a, t_stack *stack_b);
-void				case_5(t_stack **stack_a, t_stack **stack_b);
-int					reverse_sorted(t_stack *stack);
-void				sort_large_stack(t_stack **stack_a, t_stack **stack_b);
-void				final_adjustment(t_stack **stack_a);
+void   	Opti_5(t_stack **stack_a, t_stack **stack_b);
+int    reverse_sorted(t_stack *stack);
+void	sort_large_stack(t_stack **stack_a, t_stack **stack_b);
+void	final_adjustment(t_stack **stack_a);
 
 #endif

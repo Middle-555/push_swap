@@ -13,11 +13,14 @@
 #include "../../include/push_swap.h"
 
 /**
- * @brief
+ * @brief Determines the target index for placing a value from src in dst.
  *
- * @param src
- * @param dst
- * @return int
+ * Calculates where in the destination stack a value should go based on the
+ * smallest difference in values. It recalculates indices before comparison.
+ *
+ * @param src Source stack containing the value to place.
+ * @param dst Destination stack where the value needs to be placed.
+ * @return int The index in dst where the value fits best.
  */
 
 int	find_target_index(t_stack *src, t_stack *dst)
@@ -47,7 +50,6 @@ int	find_target_index(t_stack *src, t_stack *dst)
 	return (best_dst);
 }
 
-/*
 int	find_target_index_in_a(t_stack *src, t_stack *dst)
 {
 	int	max_diff;
@@ -86,4 +88,3 @@ t_rotation	find_best_rotation(t_stack **stack_a, t_stack **stack_b)
 	exec_move(rotation_info, stack_a, stack_b);
 	return (rotation_info);
 }
-*/

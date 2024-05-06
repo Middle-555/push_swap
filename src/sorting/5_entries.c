@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:09:42 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 12:21:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:01:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	sort_5_entries(t_stack **stack_a, t_stack **stack_b)
 	int		size;
 
 	if (reverse_sorted(*stack_a))
-		Opti_5(stack_a, stack_b);
+		case_5(stack_a, stack_b);
 	else
 	{
 		size = stack_size(*stack_a);
