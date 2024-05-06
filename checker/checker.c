@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:26:09 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 15:28:28 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:43:26 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(int argc, char **argv)
 		free_both_stack(&data);
 	else
 	{
-		//check
+		get_instruction(&data.stack_a, &data.stack_b);
+		check_result(&data.stack_a);
 		free_both_stack(&data);
 	}
 	return (0);
