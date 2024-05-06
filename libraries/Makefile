@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 17:45:14 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/06 19:07:37 by kpourcel         ###   ########.fr        #
+#    Updated: 2024/05/06 21:00:31 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRC_PRINTF = ft_printf/src/ft_printf.c ft_printf/src/ft_printadresse.c ft_printf
                 ft_printf/src/ft_putnbr.c ft_printf/src/ft_putstr.c   
 
 # Ajoute tous tes fichiers source de get_next_line
-SRC_GET_NEXT_LINE = get_next_line/src/the_get_next_line.c get_next_line/src/the_get_next_line01.c  
+SRC_GET_NEXT_LINE = get_next_line/src/get_next_line.c get_next_line/src/get_next_line_utils.c  
 
 # Liste des fichiers objets
 OBJ_LIBFT = $(SRC_LIBFT:.c=.o)

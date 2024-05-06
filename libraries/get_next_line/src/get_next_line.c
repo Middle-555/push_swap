@@ -5,111 +5,123 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 14:04:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 18:17:17 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/05/06 20:57:24 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/05/06 21:04:39 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/get_next_line.h"
 
-/* 1. Fonction qui récupère ce qui est lu et l'envoie 
-dans notre variable statique */
-char	*read_and_stock(int fd, char *buff)
+/* readNextLine: Lire la ligne suivante d'un fichier et gérer un buffer statique */
+char *get_next_line(int fd) 
 {
-	char	*stash;
-	int		already_read;
+    static char *buf[4096];
+    char *line;
 
-	already_read = 1;
-	stash = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
-	while (already_read != 0)
+    if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0) 
+    {
+        free(buf[fd]);
+        buf[fd] = NULL;
+        return NULL;
+    }
+    buf[fd] = add_to_buffer(fd, buf[fd]);
+    if (!buf[fd])
+        return NULL;
+    line = extract_line(buf[fd]);
+    buf[fd] = clear_buffer(buf[fd]);
+    return line;
+}
+
+/* add_to_buffer: Ajoute les données lues au buffer jusqu'à rencontrer un '\n' */
+char	*add_to_buffer(int fd, char *buf)
+{
+	char	*temp_buf;
+	int		bytes_read;
+
+	bytes_read = 1;
+	temp_buf = allocate_memory(BUFFER_SIZE + 1, sizeof(char));
+	while (bytes_read != 0)
 	{
-		already_read = read(fd, stash, BUFFER_SIZE);
-		if (already_read == -1)
+		bytes_read = read(fd, temp_buf, BUFFER_SIZE);
+		if (bytes_read == -1)
 		{
-			free(stash);
+			free(temp_buf);
 			return (NULL);
 		}
-		stash[already_read] = 0;
-		buff = ft_strjoin(buff, stash);
-		if (ft_strchr(stash, '\n'))
+		temp_buf[bytes_read] = '\0';
+		buf = join_strings(buf, temp_buf);
+		if (find_char(temp_buf, '\n'))
 			break ;
 	}
-	free (stash);
-	return (buff);
+	free(temp_buf);
+	return (buf);
 }
-/* 2. This function read until it find a '\n' and save it in stash. */
 
-char	*ft_seg_line(char *stash)
+/* extract_line: Extrait une ligne complète du buffer jusqu'à '\n' inclus */
+char	*extract_line(char *buf)
 {
 	char	*line;
 	int		i;
-	int		new_line;
 
 	i = 0;
-	if (!stash[i])
+	if (!buf[i])
 		return (NULL);
-	while (stash[i] && stash[i] != '\n')
+	while (buf[i] && buf[i] != '\n')
 		i++;
-	new_line = i + 2;
-	i = 0;
-	line = ft_calloc(new_line, sizeof(char));
+	line = allocate_memory(i + 2, sizeof(char));
 	if (!line)
 		return (NULL);
-	while (stash[i] && stash[i] != '\n')
+	i = 0;
+	while (buf[i] && buf[i] != '\n')
 	{
-		line[i] = stash[i];
+		line[i] = buf[i];
 		i++;
 	}
-	if (stash[i] && stash[i] == '\n')
+	if (buf[i] && buf[i] == '\n')
 		line[i] = '\n';
 	return (line);
 }
-// 3. Fonction qui clear tout ce qu'il y a avant le "\n" et garde que le reste. 
 
-char	*ft_clear_and_save(char *stash)
+/* create_new_buffer: Crée un nouveau buffer à partir de la position après '\n' */
+char	*create_new_buffer(char *buf, int i)
 {
-	int		i;
 	int		j;
-	char	*save;
+	char	*new_buf;
 
-	i = 0;
-	while (stash[i] && stash[i] != '\n')
-		i++;
-	if (!stash[i])
-	{
-		free(stash);
-		return (NULL);
-	}
-	save = ft_calloc((ft_strlen(stash) - i + 1), sizeof(char));
-	if (!save)
+	new_buf = allocate_memory((string_length(buf) - i + 1), sizeof(char));
+	if (!new_buf)
 		return (NULL);
 	i++;
 	j = 0;
-	while (stash[i])
+	while (buf[i])
 	{
-		save[j] = stash[i];
+		new_buf[j] = buf[i];
 		i++;
 		j++;
 	}
-	free (stash);
-	return (save);
+	return (new_buf);
 }
 
-char	*get_next_line(int fd)
+/* clear_buffer: Nettoie le buffer en créant un nouveau à partir du dernier '\n' trouvé */
+char	*clear_buffer(char *buf)
 {
-	static char	*buffer = NULL;
-	char		*line;
+	int		i;
+	char	*new_buf;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read (fd, 0, 0) < 0)
+	i = 0;
+	while (buf[i] && buf[i] != '\n')
+		i++;
+	if (!buf[i])
 	{
-		free (buffer);
-		buffer = (NULL);
+		free(buf);
 		return (NULL);
 	}
-	buffer = read_and_stock(fd, buffer);
-	if (!buffer)
+	new_buf = create_new_buffer(buf, i);
+	free(buf);
+	if (new_buf[0] == '\0')
+	{
+		free(new_buf);
 		return (NULL);
-	line = ft_seg_line(buffer);
-	buffer = ft_clear_and_save(buffer);
-	return (line);
+	}
+	return (new_buf);
 }

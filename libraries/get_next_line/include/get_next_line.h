@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:20 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/03/06 01:42:41 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:07:31 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@
 #  define BUFFER_SIZE 1000
 # endif
 
-char	*ft_strchr(const char *s, int c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
-char	*get_next_line(int fd);
-char	*ft_clear_and_save(char *stash);
-char	*ft_seg_line(char *stash);
-char	*read_and_stock(int fd, char *buff);
-size_t	ft_strlen(const char *s);
-void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t nbr, size_t size);
+char *get_next_line(int fd);
+char *add_to_buffer(int fd, char *buf);
+char *extract_line(char *buf);
+char *clear_buffer(char *buf);
+void *allocate_memory(size_t num_items, size_t size);
+char *join_strings(char *str1, char *str2);
+char *find_char(const char *str, int char_to_find);
+size_t string_length(const char *str);
 #endif

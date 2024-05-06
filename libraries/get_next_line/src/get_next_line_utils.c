@@ -5,78 +5,89 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 14:04:50 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 18:18:08 by kpourcel         ###   ########.fr       */
+/*   Created: 2024/05/06 20:59:44 by kpourcel          #+#    #+#             */
+/*   Updated: 2024/05/06 21:04:44 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/get_next_line.h"
 
-/*Permet de trouver un caractère choisit dans un tableau 
-/ une chaine de caractère.*/
-char	*ft_strchr(const char *s1, int c)
+/* find_char: Recherche un caractère spécifique dans une chaîne de caractères */
+char	*find_char(const char *str, int char_to_find)
 {
-	while (*s1 != (char)c)
+	while (*str != (char)char_to_find)
 	{
-		if (*s1 == '\0')
+		if (*str == '\0')
 			return (NULL);
-		s1++;
+		str++;
 	}
-	return ((char *)s1);
+	return ((char *)str);
 }
 
-/* Permet de malloc + cat deux chaines vers une 3 ème. */
-char	*ft_strjoin(char *s1, char *s2)
+/* string_length: Calcule la longueur d'une chaîne de caractères */
+size_t	string_length(const char *str)
 {
-	int		i;
-	int		k;
-	char	*s3;
+	size_t length;
 
-	if (!s1)
-	{
-		s1 = (char *)malloc(1 * sizeof(char));
-		s1[0] = '\0';
-	}
-	if (!s2 || !s1)
-		return (NULL);
-	s3 = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
-	if (!s3)
-		return (NULL);
-	i = -1;
-	while (s1[++i])
-		s3[i] = s1[i];
-	k = -1;
-	while (s2[++k])
-		s3[i + k] = s2[k];
-	s3[i + k] = '\0';
-	free (s1);
-	return (s3);
+	if (!str)
+		return (0);
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
 }
 
-/* Permet de rajouter le \0 que l'on recherchera plus tard */
-/*void	ft_bzero(void *s, size_t n)
+/* clear_memory: Initialise les n premiers octets du bloc mémoire pointé par ptr à zéro */
+void	clear_memory(void *ptr, size_t n)
 {
 	size_t	i;
-	char	*s1;
+	char	*str;
 
 	i = 0;
-	s1 = (char *)(s);
+	str = (char *)ptr;
 	while (i < n)
 	{
-		s1[i] = '\0';
+		str[i] = '\0';
 		i++;
 	}
 }
-*/
-/* Malloc + bzero*/
 
-void	*ft_calloc(size_t nbr, size_t size)
+/* allocate_memory: Alloue de la mémoire tout en initialisant le contenu à zéro */
+void	*allocate_memory(size_t num_items, size_t size)
 {
-	void	*s1;
+	void	*ptr;
 
-	s1 = malloc(nbr * size);
-	if (!s1)
+	ptr = malloc(num_items * size);
+	if (!ptr)
 		return (NULL);
-	ft_bzero(s1, nbr * size);
-	return (s1);
+	clear_memory(ptr, num_items * size);
+	return (ptr);
+}
+
+/* join_strings: Concatène deux chaînes de caractères en une nouvelle chaîne */
+char	*join_strings(char *str1, char *str2)
+{
+	int	i;
+	int	k;
+	char	*result;
+
+	if (!str1)
+	{
+		str1 = (char *)malloc(1 * sizeof(char));
+		str1[0] = '\0';
+	}
+	if (!str2 || !str1)
+		return (NULL);
+	result = malloc(sizeof(char) * ((string_length(str1) + string_length(str2)) + 1));
+	if (!result)
+		return (NULL);
+	i = -1;
+	while (str1[++i])
+		result[i] = str1[i];
+	k = -1;
+	while (str2[++k])
+		result[i + k] = str2[k];
+	result[i + k] = '\0';
+	free(str1);
+	return (result);
 }
