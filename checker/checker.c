@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:58:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 20:25:35 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:53:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 	{
-		error_msg("Usage: ./push_swap [tableau d'entiers]");
+		error_msg("Write the same arg than ./push_swap");
 		return (1);
 	}
 	tab = init_tab(argc, argv);
