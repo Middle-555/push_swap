@@ -28,7 +28,6 @@ int	find_target_index(t_stack *src, t_stack *dst)
 
 	min_diff = __INT_MAX__;
 	best_dst = dst->index;
-
 	recalculate_index(src);
 	recalculate_index(dst);
 	if (src->value > find_highest_node(dst)->value)

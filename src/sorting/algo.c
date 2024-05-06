@@ -6,11 +6,18 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:08:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/05 17:47:57 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:13:37 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 
 void	sort_large_stack(t_stack **stack_a, t_stack **stack_b)
 {
@@ -35,6 +42,12 @@ void	sort_large_stack(t_stack **stack_a, t_stack **stack_b)
 	final_adjustment(stack_a);
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ */
+
 void	final_adjustment(t_stack **stack_a)
 {
 	while (*stack_a != find_lowest_node(stack_a))
@@ -46,6 +59,12 @@ void	final_adjustment(t_stack **stack_a)
 	}
 }
 
+/**
+ * @brief 
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 
 void	sorting(t_stack **stack_a, t_stack **stack_b)
 {

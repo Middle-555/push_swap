@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:10:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/05 17:33:45 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:10:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,10 @@ void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 			ft_printf("%d [%d]\t", stack_a->value, stack_a->index);
 		else
 			ft_printf("\t\t");
-
 		if (stack_b != NULL)
 			ft_printf("%d [%d]\n", stack_b->value, stack_b->index);
 		else
 			ft_printf("\n");
-
 		if (stack_a != NULL)
 			stack_a = stack_a->next;
 		if (stack_b != NULL)
