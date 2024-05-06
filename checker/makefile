@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/09 14:56:40 by kpourcel          #+#    #+#              #
-#    Updated: 2024/05/06 17:17:31 by kpourcel         ###   ########.fr        #
+#    Created: 2024/05/06 17:22:25 by kpourcel          #+#    #+#              #
+#    Updated: 2024/05/06 17:40:12 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the program
-NAME    =    push_swap
-CHECKER_NAME = checker
+NAME    =    checker
 # Flags
 CC		=	cc
 CFLAGS		=	-Wall -Werror -Wextra -g
 
 # Directories
-VPATH		=	src  src/error_handling src/move src/sorting src/utils checker
-SRC_DIR		=	src/
-OBJ_DIR		=	obj/
-LIB_DIR		=	libraries/
+VPATH		=	../src  ../src/error_handling ../src/move ../src/sorting ../src/utils checker
+SRC_DIR		=	../src/
+OBJ_DIR		=	../obj/
+LIB_DIR		=	../libraries/
 CHECKER_DIR	=	checker/
 
 # .c and .o files
@@ -31,8 +30,8 @@ MOVE		=	push.c reverse_rotate.c rotate.c swap.c
 SORTING		=	sorting_utils.c 3_entries.c 2_entries.c sorting.c \
 				algo.c algo_utils.c target.c cost.c cost_utils.c \
 					4_entries.c 5_entries.c
-CHECKER_SRC	=	check.c checker.c
-SRC		=	main.c $(ERROR) $(UTILS) $(MOVE) $(SORTING)
+CHECKER		=	check.c
+SRC		=	checker.c $(ERROR) $(UTILS) $(MOVE) $(SORTING) $(CHECKER)
 OBJ		=	$(SRC:%.c=$(OBJ_DIR)%.o)
 
 # .a files
@@ -40,7 +39,6 @@ LIBFT		=	$(LIB_DIR)libraries.a
 
 # The main rule
 all                :	$(NAME)
-bonus		   :	$(CHECKER_NAME)
 
 # The name rule
 $(NAME)            :    $(OBJ) $(LIBFT)
@@ -53,13 +51,6 @@ $(LIBFT)        :    $(LIB_DIR)
 	@echo "\033[0;33mCompiling my libft -> ⏳\033[0m"
 	@make all -sC $<
 	@echo "\033[0;32mLibft successfuly compiled -> ✅\033[0m\n"
-
-
-$(CHECKER_NAME): $(CHECKER_SRC:%.c=$(OBJ_DIR)%.o) $(LIBFT)
-	@echo "\033[0;33mCompiling the checker program -> ⏳\033[0m"
-	@$(CC) $(CHECKER_SRC:%.c=$(OBJ_DIR)%.o) $(LIBFT) -o $@ -I include/
-	@echo "\033[0;32mChecker program successfully compiled -> ✅\033[0m\n"
-
 
 # Create the obj directory
 $(OBJ_DIR)        :
@@ -80,7 +71,7 @@ clean            :
 
 fclean            :    clean
 	@echo "\033[0;31mCleaning program -> 🗑️\033[0m"
-	@rm -rf $(NAME) $(CHECKER_NAME)
+	@rm -rf $(NAME)
 	@make fclean -sC $(LIB_DIR)
 	@echo "\033[0;32mDone -> ✅\033[0m\n"
 

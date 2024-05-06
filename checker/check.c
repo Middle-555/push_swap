@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:26:16 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 15:54:30 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:35:58 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../include/checker.h"
 
 void	check_result(t_stack **stack_a)
 {
