@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:58:01 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 17:58:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/06 18:09:31 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	get_instruction(t_stack **stack_a, t_stack **stack_b)
 			ft_printf("Error\n");
 			return (-1);
 		}
-		if (check_lst_sorted(stack_a) == (-1))
+		if (check_lst_sorted(stack_a) && stack_b == NULL)
 		{
 			free(instruction);
 			return (0);
