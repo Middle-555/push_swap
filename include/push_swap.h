@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:07:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2024/05/06 18:03:36 by kpourcel         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:56:07 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,18 +93,26 @@ void				swap_both_stack(t_stack **stack_a, t_stack **stack_b);
 
 // -> 2_entries.c
 void				sort_2_entries(t_stack **stack_a);
+
 // -> 3_entries.c
 void				sort_3_entries(t_stack **stack_a);
+
+// -> 4_entries.c
+void				sort_4_entries(t_stack **stack_a, t_stack **stack_b);
+
+// -> 5_entries.c
+void				sort_5_entries(t_stack **stack_a, t_stack **stack_b);
+void				case_5(t_stack **stack_a, t_stack **stack_b);
+int					reverse_sorted(t_stack *stack);
 
 // -> algo_utils.c
 int					find_index(t_stack *stack, int value);
 int					recalculate_index(t_stack *stack);
 
 // -> algo.c
+void				sort_large_stack(t_stack **stack_a, t_stack **stack_b);
+void				final_adjustment(t_stack **stack_a);
 void				sorting(t_stack **stack_a, t_stack **stack_b);
-void				sort_5_entries(t_stack **stack_a, t_stack **stack_b);
-void				sort_4_entries(t_stack **stack_a, t_stack **stack_b);
-t_rotation			find_best_rotation(t_stack **stack_a, t_stack **stack_b);
 
 // -> cost_utils.c
 int					absolute_min(int a, int b);
@@ -112,6 +120,7 @@ int					absolute_max(int a, int b);
 int					absolute_val(int n);
 int					min(int a, int b);
 int					max(int a, int b);
+
 // -> cost.c
 t_rotation			rotate_cost(t_stack **stack_a, t_stack **stack_b, int ind_a,
 						int ind_b);
@@ -133,13 +142,16 @@ void				entries_handler(t_stack **stack_a, t_stack **stack_b);
 // -> target.c
 int					find_target_index(t_stack *src, t_stack *dst);
 int					find_target_index_in_a(t_stack *src, t_stack *dst);
+t_rotation			find_best_rotation(t_stack **stack_a, t_stack **stack_b);
 
 // utils
 
-// -> utils.c
-char				**init_tab(int argc, char **argv);
-char				**add_tab(int argc, char **argv);
-int					ft_strcmp(char *s1, char *s2);
+// -> test.c
+void				print_tab(char **tab);
+void				lst_print(t_stack *lst);
+void				print_stack_and_targets(t_stack *stack);
+void				print_stack_costs(t_stack *stack);
+void				print_stacks(t_stack *stack_a, t_stack *stack_b);
 
 // -> utils_linked_list.c
 t_stack				*lst_new(t_stack *stack, int pos, int value);
@@ -148,20 +160,14 @@ t_stack				*lst_last(t_stack *lst);
 void				init_stack(t_data *data);
 int					lst_size(t_stack *lst);
 
+// -> utils.c
+char				**init_tab(int argc, char **argv);
+char				**add_tab(int argc, char **argv);
+int					ft_strcmp(char *s1, char *s2);
+
 // -> utils2_linked_list.c
 t_stack				*creade_new_node(int value);
 void				add_on_top(t_stack **stack, t_stack *new_node);
 int					stack_size(t_stack *stack);
-
-// -> test.c
-void				print_tab(char **tab);
-void				lst_print(t_stack *lst);
-void				print_stack_and_targets(t_stack *stack);
-void				print_stack_costs(t_stack *stack);
-void				print_stacks(t_stack *stack_a, t_stack *stack_b);
-void				case_5(t_stack **stack_a, t_stack **stack_b);
-int					reverse_sorted(t_stack *stack);
-void				sort_large_stack(t_stack **stack_a, t_stack **stack_b);
-void				final_adjustment(t_stack **stack_a);
 
 #endif
