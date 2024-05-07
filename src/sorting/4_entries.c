@@ -33,7 +33,7 @@ void	sort_4_entries(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (*stack_a != find_lowest_node(stack_a))
 	{
-		if (!(check_lst_sorted(stack_a)))
+		if ((check_lst_sorted(stack_a) == -1))
 			rotate_stack_a(stack_a);
 	}
 }

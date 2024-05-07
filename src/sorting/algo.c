@@ -30,15 +30,17 @@ void	sort_large_stack(t_stack **stack_a, t_stack **stack_b)
 	push_to_stack_b(stack_a, stack_b);
 	push_to_stack_b(stack_a, stack_b);
 	stack_size_a = stack_size(*stack_a);
-	while (stack_size_a > 0)
+	while (stack_size_a > 3)
 	{
 		sorting(stack_a, stack_b);
 		push_to_stack_b(stack_a, stack_b);
 		stack_size_a = stack_size(*stack_a);
 	}
+	sort_3_entries(stack_a);
 	stack_size_b = stack_size(*stack_b);
 	while (stack_size_b > 0)
 	{
+		find_best_rotation(stack_a, stack_b);
 		push_to_stack_a(stack_a, stack_b);
 		stack_size_b = stack_size(*stack_b);
 	}
@@ -58,7 +60,7 @@ void	final_adjustment(t_stack **stack_a)
 {
 	while (*stack_a != find_lowest_node(stack_a))
 	{
-		if (find_lowest_node(stack_a)->index > (stack_size(*stack_a) / 2))
+		if (find_lowest_node(stack_a)->index > (stack_size(*stack_a) / 2 + 1))
 			rr_stack_a(stack_a);
 		else
 			rotate_stack_a(stack_a);
